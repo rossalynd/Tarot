@@ -32,3 +32,4 @@ struct TarotApp: App {
         .modelContainer(sharedModelContainer)
     }
 }
+

@@ -30,22 +30,30 @@ struct ContentView: View {
                                         SavedReadingsView(navigationPath: $navigationPath)
                                     case "ResultsView":
                                         ResultsView(navigationPath: $navigationPath, selectedCards: $selectedCards)
+                                    case "FaceUpDeckView":
+                                        FaceUpDeckView(navigationPath: $navigationPath)
                                         
                                     default:
                                         EmptyView()
                                     }
                                 }
+                .navigationDestination(for: CardMeaningRoute.self) { route in
+                    CardMeaning(cardName: route.cardName)
+                }
                }
         .onAppear() {
             selectedCards = []
         }
+        
                
         }
     
 
 
     }
-
+struct CardMeaningRoute: Hashable {
+    let cardName: String
+}
 #Preview {
     ContentView()
         .modelContainer(for: Reading.self, inMemory: true)

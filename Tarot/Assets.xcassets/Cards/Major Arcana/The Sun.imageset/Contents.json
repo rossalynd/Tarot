@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "The Sun.png",
+      "filename" : "19_Sun.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "The Sun 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "The Sun 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

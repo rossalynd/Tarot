@@ -29,9 +29,7 @@ struct CardView: View {
                         .clipped()
                 } else {
                     // Fallback when image doesn't exist
-                    ZStack {
-                        
-                        VStack {
+                    
                             Image("CardBack")
                                 .resizable()
                                 .scaledToFill()
@@ -39,12 +37,7 @@ struct CardView: View {
                                 .shadow(radius: 5)
                                 .clipped()
                                 
-                                
-                         
-                                
-                        }
-                    }
-                    .shadow(radius: 5)
+                
                 }
             } else {
                 // Use the card back image
@@ -57,9 +50,10 @@ struct CardView: View {
             }
         }
         .aspectRatio(2/3, contentMode: .fit)
+        
     }
 }
 #Preview {
-    CardView(card: Card(name: "TBlag",), isFaceUp: true)
+    CardView(card: Card(name: "The Sun",), isFaceUp: true)
         .modelContainer(for: Reading.self, inMemory: true)
 }

@@ -21,6 +21,9 @@ struct HomeView: View {
             Button("View Saved Readings") {
                 navigationPath.append("SavedReadings")
             }
+            Button("View Deck") {
+                navigationPath.append("FaceUpDeckView")
+            }
         }
         .navigationTitle("Tarot Home")
     }

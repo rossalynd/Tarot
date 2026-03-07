@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Four of Pentacles.png",
+      "filename" : "Pentacles_4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Four of Pentacles 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Four of Pentacles 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -46,3 +46,16 @@ class TarotMeanings {
 }
 
 
+struct TarotAIRequest: Codable {
+    let question: String
+    let cards: [String]
+    let spreadCount: Int
+    let notes: String?
+}
+
+struct TarotAIResponse: Codable {
+    let summary: String
+    let cardByCard: [String]   // same order as selectedCards
+    let advice: [String]
+    let journalPrompts: [String]
+}

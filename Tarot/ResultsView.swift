@@ -18,6 +18,13 @@ struct ResultsView: View {
     @Binding var selectedCards: [Card]
     @Environment(\.modelContext) private var modelContext
     @State private var notes: String = ""
+    @State private var showAskSheet = false
+    @State private var userQuestion = ""
+    @State private var isAskingAI = false
+    @State private var aiResponse: TarotAIResponse?
+    @State private var aiError: String?
+
+    private let aiClient = TarotAIClient()
 
     // Create dynamic rows based on the number of selected cards
     private var rows: [GridItem] {
@@ -88,6 +95,83 @@ struct ResultsView: View {
                 .foregroundColor(.white)
                 .background(Color.green)
                 .cornerRadius(10)
+                
+                
+                //GHATGPT
+                Button("Ask ChatGPT") {
+                    showAskSheet = true
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.purple)
+                .cornerRadius(10)
+                .sheet(isPresented: $showAskSheet) {
+                    NavigationView {
+                        VStack(spacing: 16) {
+                            Text("What’s your question?")
+                                .font(.headline)
+
+                            TextEditor(text: $userQuestion)
+                                .frame(height: 140)
+                                .border(Color.gray.opacity(0.3))
+
+                            if let aiError {
+                                Text(aiError).foregroundColor(.red)
+                            }
+
+                            Button(isAskingAI ? "Asking..." : "Interpret") {
+                                Task {
+                                    isAskingAI = true
+                                    aiError = nil
+                                    do {
+                                        let res = try await aiClient.interpret(
+                                            question: userQuestion,
+                                            selectedCards: selectedCards,
+                                            notes: notes
+                                        )
+                                        aiResponse = res
+                                        showAskSheet = false
+                                    } catch {
+                                        aiError = error.localizedDescription
+                                    }
+                                    isAskingAI = false
+                                }
+                            }
+                            .disabled(isAskingAI || userQuestion.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(isAskingAI ? Color.gray : Color.purple)
+                            .cornerRadius(12)
+
+                            Spacer()
+                        }
+                        .padding()
+                        .navigationTitle("AI Reading")
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") { showAskSheet = false }
+                            }
+                        }
+                    }
+                }
+                //END CHATHPT
+                
+                if let aiResponse {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("AI Interpretation").font(.title2).bold()
+                        Text(aiResponse.summary)
+
+                        Text("Card by card").font(.headline)
+                        ForEach(Array(aiResponse.cardByCard.enumerated()), id: \.offset) { idx, text in
+                            Text("• \(selectedCards[idx].name): \(text)")
+                        }
+
+                        Text("Advice").font(.headline)
+                        ForEach(aiResponse.advice, id: \.self) { Text("• \($0)") }
+                    }
+                    .padding(.top)
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure the entire view uses available space

@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Page of Pentacles.png",
+      "filename" : "Pentacles_Page.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Page of Pentacles 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Page of Pentacles 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
