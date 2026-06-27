@@ -19,48 +19,6 @@ struct Card: Identifiable, Hashable, Codable {
     }
 }
 
-@Model
-final class Reading {
-    var id: UUID
-    var date: Date
-    var cardNames: [String]
-    var notes: String
-    var rune: String?
-    var hexagramLinesRaw: String
-
-    init(
-        cardNames: [String],
-        notes: String,
-        rune: String? = nil,
-        hexagramLines: [Int] = []
-    ) {
-        self.id = UUID()
-        self.date = Date()
-        self.cardNames = cardNames
-        self.notes = notes
-        self.rune = rune
-        self.hexagramLinesRaw = hexagramLines.map(String.init).joined(separator: ",")
-    }
-
-    var hexagramLines: [Int] {
-        get {
-            hexagramLinesRaw
-                .split(separator: ",")
-                .compactMap { Int($0.trimmingCharacters(in: .whitespacesAndNewlines)) }
-        }
-        set {
-            hexagramLinesRaw = newValue.map(String.init).joined(separator: ",")
-        }
-    }
-
-    var iChingHexagramNumber: Int? {
-        IChingHexagramLookup.number(for: hexagramLines)
-    }
-
-    var iChingChangingLines: [Int] {
-        IChingHexagramLookup.changingLines(for: hexagramLines)
-    }
-}
 
 struct TarotMeanings: Identifiable, Hashable, Codable {
     var id: Double

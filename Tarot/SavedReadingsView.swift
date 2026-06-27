@@ -17,7 +17,7 @@ struct SavedReadingsView: View {
     var body: some View {
         List {
             ForEach(readings) { reading in
-                NavigationLink(destination: SavedReadingPopover(reading: reading)) {
+                NavigationLink(destination: SavedReadingView(reading: reading)) {
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Date: \(reading.date.formatted(date: .abbreviated, time: .shortened))")
                             .font(.headline)
@@ -88,12 +88,7 @@ struct SavedReadingPopover: View {
                 }
 
                 if !reading.hexagramLines.isEmpty {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Pattern")
-                            .font(.subheadline)
-
-                        HexagramDisplayView(lines: reading.hexagramLines)
-                    }
+                    IChingPatternSummaryView(lines: reading.hexagramLines)
                 }
 
                 if let rune = reading.rune {

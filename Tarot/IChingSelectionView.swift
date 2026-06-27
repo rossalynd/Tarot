@@ -2,7 +2,7 @@
 //  IChingSelectionView.swift
 //  Tarot
 //
-//  Created by ChatGPT on 4/9/26.
+//  Created by Rosie on 4/9/26.
 //
 
 import SwiftUI
@@ -11,65 +11,49 @@ struct IChingSelectionView: View {
     @Binding var navigationPath: NavigationPath
     @Binding var hexagramLines: [Int]
 
-    @State private var currentSelections: [Int] = []
-    @State private var revealedCards: [HiddenCoinChoice] = []
+    @State private var coins: [SpinningCoin] = []
+    @State private var isTossing = false
     @State private var lineJustCompleted: Int? = nil
+    @State private var hasStarted = false
 
     var body: some View {
         VStack(spacing: 28) {
             Text("Choose")
                 .font(.largeTitle.bold())
 
-            Text("Line \(hexagramLines.count + 1) of 6")
+            Text("Line \(min(hexagramLines.count + 1, 6)) of 6")
                 .font(.headline)
                 .foregroundStyle(.secondary)
 
-            HStack(spacing: 24) {
-                ForEach(revealedCards) { choice in
+            HStack(spacing: 20) {
+                ForEach(coins) { coin in
                     Button {
-                        choose(choice)
+                        stopCoin(coin)
                     } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.black.opacity(0.08))
-                                .frame(width: 120, height: 170)
-
-                            if choice.isRevealed {
-                                Text(choice.value == 3 ? "Light" : "Shadow")
-                                    .font(.headline.bold())
-                                    .foregroundStyle(.primary)
-                            } else {
-                                Image("CardBack")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 120, height: 170)
-                                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                            }
-                        }
+                        CoinView(coin: coin)
                     }
                     .buttonStyle(.plain)
-                    .disabled(choice.isRevealed || lineJustCompleted != nil)
+                    .disabled(!isTossing || coin.isStopped || lineJustCompleted != nil)
                 }
             }
+            .frame(height: 150)
 
-            VStack(spacing: 8) {
-                Text("Selections for this line")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+            Text(instructionText)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .frame(minHeight: 24)
 
-                HStack(spacing: 12) {
-                    ForEach(0..<3, id: \.self) { index in
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(index < currentSelections.count ? Color.blue.opacity(0.2) : Color.gray.opacity(0.12))
-                            .frame(width: 60, height: 60)
-                            .overlay {
-                                if index < currentSelections.count {
-                                    Text("\(currentSelections[index])")
-                                        .font(.headline)
-                                }
-                            }
-                    }
+            if let lineJustCompleted {
+                VStack(spacing: 6) {
+                    Text("Line Complete")
+                        .font(.headline)
+
+                    Text(lineMeaning(for: lineJustCompleted))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
+                .transition(.opacity)
             }
 
             if !hexagramLines.isEmpty {
@@ -86,62 +70,210 @@ struct IChingSelectionView: View {
         }
         .padding()
         .onAppear {
-            if revealedCards.isEmpty {
-                revealedCards = makeChoices()
-            }
+            guard !hasStarted else { return }
+
+            hasStarted = true
 
             if hexagramLines.count >= 6 {
                 navigationPath.append("RuneSelectionView")
+            } else {
+                startToss()
             }
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+
+    private var instructionText: String {
+        let stoppedCount = coins.filter(\.isStopped).count
+
+        if isTossing {
+            return "Tap each spinning coin to stop it."
+        } else if stoppedCount == 3 {
+            return "Reading the line..."
+        } else if hexagramLines.count < 6 {
+            return "Preparing the next toss..."
+        } else {
+            return ""
         }
     }
 
-    private func choose(_ choice: HiddenCoinChoice) {
-        guard lineJustCompleted == nil else { return }
-        guard let selectedIndex = revealedCards.firstIndex(where: { $0.id == choice.id }) else { return }
-
-        let selectedValue = revealedCards[selectedIndex].value
-
-        for index in revealedCards.indices {
-            revealedCards[index].isRevealed = false
+    private func startToss() {
+        guard hexagramLines.count < 6 else {
+            navigationPath.append("RuneSelectionView")
+            return
         }
 
-        revealedCards[selectedIndex].isRevealed = true
-        currentSelections.append(selectedValue)
+        withAnimation(.easeInOut(duration: 0.2)) {
+            lineJustCompleted = nil
+            coins = [
+                SpinningCoin(),
+                SpinningCoin(),
+                SpinningCoin()
+            ]
+            isTossing = true
+        }
+    }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            if currentSelections.count == 3 {
-                let total = currentSelections.reduce(0, +)
+    private func stopCoin(_ coin: SpinningCoin) {
+        guard let index = coins.firstIndex(where: { $0.id == coin.id }) else { return }
+        guard !coins[index].isStopped else { return }
+        guard isTossing else { return }
+        guard lineJustCompleted == nil else { return }
+
+        let result = currentCoinResult(for: coin)
+
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.75)) {
+            coins[index].result = result
+            coins[index].isStopped = true
+        }
+
+        let stoppedCount = coins.filter(\.isStopped).count
+
+        if stoppedCount == 3 {
+            completeLine()
+        }
+    }
+
+    private func currentCoinResult(for coin: SpinningCoin) -> CoinResult {
+        let time = Date().timeIntervalSinceReferenceDate
+        let cycleSpeed = 16.0
+
+        let cycle = Int((time + coin.offset) * cycleSpeed)
+
+        return cycle.isMultiple(of: 2) ? .heads : .tails
+    }
+
+    private func completeLine() {
+        isTossing = false
+
+        let total = coins
+            .compactMap(\.result)
+            .map(\.value)
+            .reduce(0, +)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+            withAnimation {
                 lineJustCompleted = total
                 hexagramLines.append(total)
+            }
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
-                    currentSelections = []
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                withAnimation(.easeInOut(duration: 0.2)) {
                     lineJustCompleted = nil
+                    coins = []
+                }
 
-                    if hexagramLines.count == 6 {
-                        navigationPath.append("RuneSelectionView")
-                    } else {
-                        revealedCards = makeChoices()
+                if hexagramLines.count >= 6 {
+                    navigationPath.append("RuneSelectionView")
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        startToss()
                     }
                 }
-            } else {
-                revealedCards = makeChoices()
             }
         }
     }
 
-    private func makeChoices() -> [HiddenCoinChoice] {
-        let values = [2, 3].shuffled()
-        return [
-            HiddenCoinChoice(value: values[0]),
-            HiddenCoinChoice(value: values[1])
-        ]
+    private func lineMeaning(for total: Int) -> String {
+        switch total {
+        case 6:
+            return "Changing Shadow"
+        case 7:
+            return "Stable Light"
+        case 8:
+            return "Stable Shadow"
+        case 9:
+            return "Changing Light"
+        default:
+            return "Line \(total)"
+        }
     }
 }
 
-private struct HiddenCoinChoice: Identifiable {
+private struct CoinView: View {
+    let coin: SpinningCoin
+
+    var body: some View {
+        ZStack {
+            if coin.isStopped, let result = coin.result {
+                Image(result.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 110, height: 110)
+                    .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 6)
+                    .transition(.scale.combined(with: .opacity))
+            } else {
+                TimelineView(.animation) { timeline in
+                    let time = timeline.date.timeIntervalSinceReferenceDate
+                    let cycleSpeed = 16.0
+
+                    let cycle = Int((time + coin.offset) * cycleSpeed)
+                    let isShowingHeads = cycle.isMultiple(of: 2)
+
+                    let angle = (time + coin.offset) * 720
+                    let radians = angle * .pi / 180
+                    let widthScale = max(0.12, abs(cos(radians)))
+
+                    ZStack {
+                        if widthScale < 0.18 {
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(
+                                    LinearGradient(
+                                        colors: [
+                                            Color.gray.opacity(0.75),
+                                            Color.white.opacity(0.9),
+                                            Color.gray.opacity(0.65)
+                                        ],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .frame(width: 12, height: 108)
+                                .shadow(color: .black.opacity(0.25), radius: 6, x: 0, y: 5)
+                        } else {
+                            Image(isShowingHeads ? "CoinHeads" : "CoinTails")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 110, height: 110)
+                                .scaleEffect(x: widthScale, y: 1.0)
+                                .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 6)
+                        }
+                    }
+                }
+                .frame(width: 120, height: 120)
+            }
+        }
+        .frame(width: 125, height: 125)
+    }
+}
+
+private struct SpinningCoin: Identifiable {
     let id = UUID()
-    let value: Int
-    var isRevealed: Bool = false
+    var result: CoinResult? = nil
+    var isStopped = false
+
+    let offset: Double = Double.random(in: 0...1)
+}
+
+private enum CoinResult {
+    case heads
+    case tails
+
+    var imageName: String {
+        switch self {
+        case .heads:
+            return "CoinHeads"
+        case .tails:
+            return "CoinTails"
+        }
+    }
+
+    var value: Int {
+        switch self {
+        case .heads:
+            return 3
+        case .tails:
+            return 2
+        }
+    }
 }

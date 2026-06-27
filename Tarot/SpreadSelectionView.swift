@@ -11,7 +11,7 @@ import SwiftUI
 struct SpreadSelectionView: View {
     @Binding var navigationPath: NavigationPath
     @Binding var selectedCards: [Card]
-    @State private var spreadCount: Int = 4
+    @State private var spreadCount: Int = 1
     var body: some View {
         VStack {
             Text("Choose Spread")

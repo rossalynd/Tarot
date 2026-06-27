@@ -60,7 +60,8 @@ struct ResultsView: View {
                         Text("Pattern")
                             .font(.title2.bold())
 
-                        HexagramDisplayView(lines: hexagramLines)
+                       
+                        IChingPatternSummaryView(lines: hexagramLines)
 
                         Text(lineDescription)
                             .font(.subheadline)
@@ -69,18 +70,7 @@ struct ResultsView: View {
                 }
 
                 if let selectedRune {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Rune")
-                            .font(.title2.bold())
-
-                        HStack(spacing: 12) {
-                            Text(selectedRune)
-                                .font(.system(size: 44))
-
-                            Text(runeMeaning(for: selectedRune))
-                                .font(.body)
-                        }
-                    }
+                    RuneSummaryView(rune: selectedRune)
                 }
 
                 Text("Notes")
@@ -105,12 +95,17 @@ struct ResultsView: View {
                         .cornerRadius(10)
 
                         Button("Save Reading") {
+                            let trimmedQuestion = userQuestion.trimmingCharacters(in: .whitespacesAndNewlines)
+
                             let reading = Reading(
                                 cardNames: selectedCards.map(\.name),
                                 notes: notes,
                                 rune: selectedRune,
-                                hexagramLines: hexagramLines
+                                hexagramLines: hexagramLines,
+                                aiQuestion: trimmedQuestion.isEmpty ? nil : trimmedQuestion,
+                                aiResponseJSON: Reading.encodeAIResponseForSave(aiResponse)
                             )
+
                             modelContext.insert(reading)
 
                             do {
@@ -275,79 +270,6 @@ struct ResultsView: View {
         }
     }
 
-    private func runeMeaning(for rune: String) -> String {
-        switch rune {
-        case "ᚠ":
-            return "Wealth, flow, new movement"
-        case "ᚢ":
-            return "Strength, endurance, shaping force"
-        case "ᚦ":
-            return "Challenge, friction, breakthrough"
-        case "ᚨ":
-            return "Message, insight, clear expression"
-        case "ᚱ":
-            return "Journey, change, unfolding path"
-        case "ᚲ":
-            return "Flame, transformation, opening"
-        case "ᚷ":
-            return "Exchange, gift, mutual influence"
-        case "ᚹ":
-            return "Joy, harmony, wishes moving closer"
-        case "ᚺ":
-            return "Disruption, weather, uncontrolled force"
-        case "ᚾ":
-            return "Need, pressure, necessity"
-        case "ᛁ":
-            return "Stillness, focus, inner alignment"
-        case "ᛃ":
-            return "Harvest, cycles, reward in time"
-        default:
-            return "A symbol has appeared."
-        }
-    }
+   
 }
 
-struct HexagramDisplayView: View {
-    let lines: [Int]
-
-    var body: some View {
-        VStack(spacing: 10) {
-            ForEach(Array(lines.enumerated()).reversed(), id: \.offset) { _, line in
-                HStack(spacing: 10) {
-                    if isYang(line) {
-                        Rectangle()
-                            .fill(Color.primary)
-                            .frame(width: 170, height: 10)
-                    } else {
-                        Rectangle()
-                            .fill(Color.primary)
-                            .frame(width: 80, height: 10)
-
-                        Rectangle()
-                            .fill(Color.primary)
-                            .frame(width: 80, height: 10)
-                    }
-
-                    if isChanging(line) {
-                        Circle()
-                            .fill(Color.orange)
-                            .frame(width: 10, height: 10)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-            }
-        }
-        .frame(maxWidth: 170)
-        .padding()
-        .background(Color.gray.opacity(0.12))
-        .cornerRadius(12)
-    }
-
-    private func isYang(_ value: Int) -> Bool {
-        value == 7 || value == 9
-    }
-
-    private func isChanging(_ value: Int) -> Bool {
-        value == 6 || value == 9
-    }
-}

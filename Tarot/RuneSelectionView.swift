@@ -5,89 +5,139 @@
 //  Created by Rosie on 4/9/26.
 //
 
-
-//
-//  RuneSelectionView.swift
-//  Tarot
-//
-//  Created by ChatGPT on 4/9/26.
-//
-
 import SwiftUI
 
 struct RuneSelectionView: View {
     @Binding var navigationPath: NavigationPath
     @Binding var selectedRune: String?
 
-    @State private var runeChoices: [RuneChoice] = RuneChoice.makeChoices()
-    @State private var revealedRuneID: UUID? = nil
-
-    private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    @State private var chosenRune: RuneChoice? = nil
+    @State private var isDrawingRune = false
+    @State private var hasDrawnRune = false
 
     var body: some View {
         VStack(spacing: 24) {
             Text("Choose a Symbol")
                 .font(.largeTitle.bold())
 
-            Text("Select one")
+            Text(chosenRune == nil ? "Tap the pouch to draw your rune" : "Your rune has been drawn")
                 .font(.headline)
                 .foregroundStyle(.secondary)
 
-            LazyVGrid(columns: columns, spacing: 18) {
-                ForEach(runeChoices) { choice in
-                    Button {
-                        reveal(choice)
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.black.opacity(0.08))
-                                .frame(height: 130)
+            Spacer()
 
-                            if revealedRuneID == choice.id {
-                                Text(choice.rune)
-                                    .font(.system(size: 42))
-                                    .foregroundStyle(.primary)
-                            } else {
-                                Image("CardBack")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(height: 130)
-                                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                            }
-                        }
+            ZStack {
+                if let chosenRune {
+                    Image(chosenRune.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 120)
+                        .offset(y: hasDrawnRune ? -170 : 20)
+                        .scaleEffect(hasDrawnRune ? 1.0 : 0.35)
+                        .opacity(hasDrawnRune ? 1 : 0)
+                        .zIndex(1)
+                        .animation(
+                            .spring(response: 0.65, dampingFraction: 0.75),
+                            value: hasDrawnRune
+                        )
+                }
+
+                Button {
+                    drawRune()
+                } label: {
+                    Image("Pouch")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 240)
+                        .scaleEffect(isDrawingRune ? 0.96 : 1.0)
+                        .animation(
+                            .spring(response: 0.25, dampingFraction: 0.55),
+                            value: isDrawingRune
+                        )
+                }
+                .buttonStyle(.plain)
+                .disabled(chosenRune != nil)
+                .zIndex(2)
+            }
+            .frame(height: 360)
+
+            VStack(spacing: 16) {
+                if chosenRune == nil {
+                    Text("The pouch is waiting...")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                } else if let chosenRune {
+                    Text(chosenRune.name)
+                        .font(.title2.bold())
+                        .transition(.opacity)
+
+                    Button {
+                        navigationPath.append("ResultsView")
+                    } label: {
+                        Text("Continue to Reading")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.indigo)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
                     }
-                    .buttonStyle(.plain)
-                    .disabled(revealedRuneID != nil)
+                    .padding(.horizontal)
+                    .transition(.opacity.combined(with: .move(edge: .bottom)))
                 }
             }
+            .animation(.easeInOut, value: chosenRune != nil)
 
             Spacer()
         }
         .padding()
     }
 
-    private func reveal(_ choice: RuneChoice) {
-        revealedRuneID = choice.id
-        selectedRune = choice.rune
+    private func drawRune() {
+        let rune = RuneChoice.allCases.randomElement()!
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            navigationPath.append("ResultsView")
+        chosenRune = rune
+        selectedRune = rune.symbol
+
+        isDrawingRune = true
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            isDrawingRune = false
+            hasDrawnRune = true
         }
     }
 }
 
 private struct RuneChoice: Identifiable {
     let id = UUID()
-    let rune: String
+    let symbol: String
+    let name: String
+    let imageName: String
 
-    static func makeChoices() -> [RuneChoice] {
-        let runePool = ["ᚠ", "ᚢ", "ᚦ", "ᚨ", "ᚱ", "ᚲ", "ᚷ", "ᚹ", "ᚺ", "ᚾ", "ᛁ", "ᛃ"]
-            .shuffled()
-
-        return Array(runePool.prefix(6)).map { RuneChoice(rune: $0) }
-    }
+    static let allCases: [RuneChoice] = [
+        RuneChoice(symbol: "ᚠ", name: "Fehu", imageName: "Fehu"),
+        RuneChoice(symbol: "ᚢ", name: "Uruz", imageName: "Uruz"),
+        RuneChoice(symbol: "ᚦ", name: "Thurisaz", imageName: "Thurisaz"),
+        RuneChoice(symbol: "ᚨ", name: "Ansuz", imageName: "Ansuz"),
+        RuneChoice(symbol: "ᚱ", name: "Raidho", imageName: "Raidho"),
+        RuneChoice(symbol: "ᚲ", name: "Kenaz", imageName: "Kenaz"),
+        RuneChoice(symbol: "ᚷ", name: "Gebo", imageName: "Gebo"),
+        RuneChoice(symbol: "ᚹ", name: "Wunjo", imageName: "Wunjo"),
+        RuneChoice(symbol: "ᚺ", name: "Hagalaz", imageName: "Hagalaz"),
+        RuneChoice(symbol: "ᚾ", name: "Naubiz", imageName: "Naubiz"),
+        RuneChoice(symbol: "ᛁ", name: "Isa", imageName: "Isa"),
+        RuneChoice(symbol: "ᛃ", name: "Jera", imageName: "Jera"),
+        RuneChoice(symbol: "ᛇ", name: "Ihwa-Eihwaz", imageName: "Ihwa-Eihwaz"),
+        RuneChoice(symbol: "ᛈ", name: "Perthro", imageName: "Perthro"),
+        RuneChoice(symbol: "ᛉ", name: "Elhaz", imageName: "Elhaz"),
+        RuneChoice(symbol: "ᛋ", name: "Sowilo", imageName: "Sowilo"),
+        RuneChoice(symbol: "ᛏ", name: "Tiwaz", imageName: "Tiwaz"),
+        RuneChoice(symbol: "ᛒ", name: "Berkano", imageName: "Berkano"),
+        RuneChoice(symbol: "ᛖ", name: "Ehwaz", imageName: "Ehwaz"),
+        RuneChoice(symbol: "ᛗ", name: "Mannaz", imageName: "Mannaz"),
+        RuneChoice(symbol: "ᛚ", name: "Laguz", imageName: "Laguz"),
+        RuneChoice(symbol: "ᛜ", name: "Ingwaz", imageName: "Ingwaz"),
+        RuneChoice(symbol: "ᛞ", name: "Dagaz", imageName: "Dagaz"),
+        RuneChoice(symbol: "ᛟ", name: "Othala", imageName: "Othala")
+    ]
 }

@@ -23,6 +23,7 @@ struct TarotApp: App {
         do {
             return try ModelContainer(
                 for: schema,
+                migrationPlan: TarotMigrationPlan.self,
                 configurations: [modelConfiguration]
             )
         } catch {
