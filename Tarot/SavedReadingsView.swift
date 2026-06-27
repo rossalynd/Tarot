@@ -13,23 +13,39 @@ struct SavedReadingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Binding var navigationPath: NavigationPath
     @Query private var readings: [Reading]
-    @State private var selectedReading: Reading? = nil
-    @State private var showPopover: Bool = false
 
     var body: some View {
         List {
             ForEach(readings) { reading in
                 NavigationLink(destination: SavedReadingPopover(reading: reading)) {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text("Date: \(reading.date.formatted(date: .abbreviated, time: .shortened))")
                             .font(.headline)
+
+                        Text("Cards: \(reading.cardNames.joined(separator: ", "))")
+                            .font(.subheadline)
+                            .foregroundColor(.primary)
+                            .lineLimit(2)
+
+                        if let rune = reading.rune {
+                            Text("Rune: \(rune)")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+
+                        if !reading.hexagramLines.isEmpty {
+                            Text("Pattern: \(reading.hexagramLines.map(String.init).joined(separator: ", "))")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+
                         Text("Notes: \(reading.notes.isEmpty ? "No notes available" : reading.notes)")
                             .font(.subheadline)
                             .foregroundColor(.gray)
+                            .lineLimit(2)
                     }
                 }
             }
-            // Enable swipe-to-delete
             .onDelete(perform: deleteReading)
         }
         .navigationTitle("Saved Readings")
@@ -49,62 +65,69 @@ struct SavedReadingsView: View {
     }
 }
 
-
-
-
-import SwiftUI
-import SwiftData
-
 struct SavedReadingPopover: View {
     @Bindable var reading: Reading
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    
-    
 
     var body: some View {
-        VStack {
-            Text("Reading Details")
-                .font(.headline)
-                .padding()
-            Text(reading.date.formatted(.dateTime))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Reading Details")
+                    .font(.headline)
 
-            // Display cards horizontally
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(reading.cardsChosen, id: \.id) { card in
-                        CardView(card: card, isFaceUp: true).padding()
+                Text(reading.date.formatted(.dateTime))
+
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(reading.cardNames, id: \.self) { cardName in
+                            CardView(card: Card(name: cardName), isFaceUp: true)
+                                .frame(width: 90, height: 150)
+                        }
                     }
                 }
-            }
-            .padding()
 
-            // Editable Notes Section
-            Text("Notes:")
-                .font(.subheadline)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading)
+                if !reading.hexagramLines.isEmpty {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Pattern")
+                            .font(.subheadline)
 
-            TextEditor(text: $reading.notes)
-                .frame(height: 50)
-                .border(Color.gray, width: 1)
-                .padding()
-
-            // Save Button
-            Button("Save Changes") {
-                do {
-                    try modelContext.save()
-                    dismiss() // Dismiss the popover
-                } catch {
-                    print("Failed to save changes: \(error.localizedDescription)")
+                        HexagramDisplayView(lines: reading.hexagramLines)
+                    }
                 }
+
+                if let rune = reading.rune {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Rune")
+                            .font(.subheadline)
+
+                        Text(rune)
+                            .font(.system(size: 42))
+                    }
+                }
+
+                Text("Notes:")
+                    .font(.subheadline)
+
+                TextEditor(text: $reading.notes)
+                    .frame(height: 80)
+                    .border(Color.gray, width: 1)
+
+                Button("Save Changes") {
+                    do {
+                        try modelContext.save()
+                        dismiss()
+                    } catch {
+                        print("Failed to save changes: \(error.localizedDescription)")
+                    }
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }
             .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
         }
-        .padding()
     }
 }

@@ -1,0 +1,6 @@
+framework module Pods_Tarot_TarotUITests {
+  umbrella header "Pods-Tarot-TarotUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

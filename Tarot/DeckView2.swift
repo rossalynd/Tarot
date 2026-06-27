@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+
 struct DeckView: View {
     @Binding var navigationPath: NavigationPath
     @State private var deck: [Card] = []
@@ -19,7 +20,7 @@ struct DeckView: View {
     @State private var animatingCardPosition: CGPoint?
     
     func shuffleDeck(cards: [Card]) -> [Card] {
-        return cards.shuffled()
+        cards.shuffled()
     }
     
     func createDeck() -> [Card] {
@@ -48,14 +49,10 @@ struct DeckView: View {
     
     func selectCard(_ card: Card, at position: CGPoint) {
         if selectedCards.count < spreadCount, !selectedCards.contains(where: { $0.id == card.id }) {
-            // Add to animating cards set
             animatingCards.insert(card.id)
             animatingCardPosition = position
-            
-            // Trigger particle effect at card position
             activeParticles.append((id: card.id, position: position))
             
-            // After animation, move to bottom
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
                     selectedCards.append(card)
@@ -63,12 +60,10 @@ struct DeckView: View {
                 }
             }
             
-            // Remove from animating set
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 animatingCards.remove(card.id)
             }
             
-            // Remove particles after animation
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                 activeParticles.removeAll { $0.id == card.id }
             }
@@ -83,6 +78,7 @@ struct DeckView: View {
                     .padding()
                 
                 Spacer()
+                
                 VStack(spacing: -20) {
                     ForEach(deck.chunked(into: 26).enumerated().map({ $0 }), id: \.offset) { rowIndex, row in
                         HStack(spacing: -58) {
@@ -93,18 +89,15 @@ struct DeckView: View {
                                 
                                 if overallIndex < visibleCardCount {
                                     if isSelected && !isAnimating {
-                                        // Invisible placeholder to maintain layout
                                         Color.clear
                                             .frame(width: 70, height: 120)
                                     } else if isAnimating {
-                                        // Invisible during animation (actual card shown in overlay)
                                         Color.clear
                                             .frame(width: 70, height: 120)
                                     } else {
                                         GeometryReader { geo in
                                             CardView(card: card, isFaceUp: false)
                                                 .onTapGesture {
-                                                    // Get card position in the deckView coordinate space
                                                     let frame = geo.frame(in: .named("deckView"))
                                                     let position = CGPoint(
                                                         x: frame.midX,
@@ -124,12 +117,12 @@ struct DeckView: View {
                 }
                 .padding()
                 .padding(.bottom, selectedCards.isEmpty ? 0 : 180)
+                
                 Spacer()
             }
             
-            // Animating card overlay - shows in center of screen
             if let animatingCard = deck.first(where: { animatingCards.contains($0.id) }),
-               let startPos = animatingCardPosition {
+               animatingCardPosition != nil {
                 GeometryReader { geo in
                     let screenCenter = CGPoint(
                         x: geo.size.width / 2,
@@ -145,7 +138,6 @@ struct DeckView: View {
                 }
             }
             
-            // Selected cards grid at bottom (overlay)
             if !selectedCards.isEmpty {
                 VStack {
                     Spacer()
@@ -158,6 +150,7 @@ struct DeckView: View {
                         ScrollView(.horizontal, showsIndicators: true) {
                             ZStack {
                                 Spacer().containerRelativeFrame(.horizontal)
+                                
                                 HStack(spacing: 15) {
                                     ForEach(selectedCards) { card in
                                         CardView(card: card, isFaceUp: true)
@@ -172,9 +165,9 @@ struct DeckView: View {
                         
                         if selectedCards.count == spreadCount {
                             Button(action: {
-                                navigationPath.append("ResultsView")
+                                navigationPath.append("IChingSelectionView")
                             }) {
-                                Text("View Reading")
+                                Text("Continue")
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .frame(maxWidth: .infinity)
@@ -194,7 +187,6 @@ struct DeckView: View {
                 }
             }
             
-            // Particle effects overlay
             ForEach(activeParticles, id: \.id) { particle in
                 ParticleEffectView(startPosition: particle.position)
             }

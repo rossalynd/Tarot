@@ -48,6 +48,7 @@ struct CardView: View {
                     .shadow(radius: 5)
                     .clipped()
             }
+           
         }
         .aspectRatio(2/3, contentMode: .fit)
         

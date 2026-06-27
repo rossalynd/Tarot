@@ -1,0 +1,988 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 71;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		189CBA9B2B98440685E70EF8AF61B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		1E86BA121A16E2655EB754D67AEE10A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		1FDA33B56006852182702167C6C5551C /* Gyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE10C64D988905AA87BF985E57DA67A /* Gyro.swift */; };
+		31D79577CAEFD172FA239DCEB577FC51 /* Shiny.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66988B5F3B4A37086AB7DF351AEB67F /* Shiny.swift */; };
+		35A4CC07936F5262DCA66A4B14926245 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		409691F9B08C41B5DDF5F8296C43570A /* Pods-Tarot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDDBB7E8304EC1A580304F5104C6B6D /* Pods-Tarot-dummy.m */; };
+		4E188F1946D8400E0CA5B12FFA2A4D5B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E28560C6A4CF3FD0A03A4AA5CB3EAC /* Scene.swift */; };
+		533FF0DEC55CF298734CB8B06BA5B9AF /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241D509984B0264B9382B18F3AF8AEA /* Gradient.swift */; };
+		7118BA956B00ADDAC888DA081D746324 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		785A84CC71E63D18E3D997C708276EFF /* Pods-Tarot-TarotUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5A101CDEBE6349064809CADB13AAC1 /* Pods-Tarot-TarotUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89F68CC3A1D5BA6B0C65195E1566E365 /* Pods-TarotTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61D5BE65C4C8F96BA27340DB8985E3A4 /* Pods-TarotTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		948CC0ABAAD043F49EF9B9DDF87D2C84 /* Pods-TarotTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76706187376B6102DCF5B2329D0D26BB /* Pods-TarotTests-dummy.m */; };
+		A5A6AF8CD477B665814B094FC9107CE9 /* Pods-Tarot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3EF9D87A24D8C4D26F9DF2231D8AFF /* Pods-Tarot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE50123C14FF99378BD52723D590E309 /* Pods-Tarot-TarotUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC7B4AA89334316A99CC04F00314C8 /* Pods-Tarot-TarotUITests-dummy.m */; };
+		D46B9022903D255988317732C6682D9F /* Shiny-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD196113A6E84D853D57FBD3AC3528AB /* Shiny-dummy.m */; };
+		D7DB0D210CBEEDD31978BEBB3A54CACF /* Shiny-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DDC08620273A8817C4888FA2A98BD1F /* Shiny-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBCAF6A7FD703CF37C86A60F9EE09C0C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE53CD57D84A404B09A29175887380 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11F7D1375627C9964DC8DF78F6EC5D6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9186C5ED4048E5FDCEE38700F9D9E74;
+			remoteInfo = "Pods-Tarot";
+		};
+		F1354E0ADF9352478541EC9722AF3F60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71E64F2DBC59C858F34693C2433C987A;
+			remoteInfo = Shiny;
+		};
+		FC2D49052874346F07F42431E31AB24A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71E64F2DBC59C858F34693C2433C987A;
+			remoteInfo = Shiny;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07237EC7D7C9C4F0D830A372A02BC048 /* Pods-Tarot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tarot.modulemap"; sourceTree = "<group>"; };
+		28E28560C6A4CF3FD0A03A4AA5CB3EAC /* Scene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Sources/Scene.swift; sourceTree = "<group>"; };
+		2E165FC66DD0E986C5DEAC053A26BF48 /* Pods-Tarot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tarot.release.xcconfig"; sourceTree = "<group>"; };
+		2E9DC7B2AF33D2C13A7ABCB679C32074 /* Pods-TarotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TarotTests.release.xcconfig"; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3855C9DBF6E2871EC18593D044F9E723 /* Pods-Tarot-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tarot-frameworks.sh"; sourceTree = "<group>"; };
+		47BACA84D34097DDEC34CFC2B436DC54 /* Shiny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Shiny.release.xcconfig; sourceTree = "<group>"; };
+		4A1DAC1F92010E1A8C03B4EAC7A83C3B /* Pods-TarotTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TarotTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4F3EF9D87A24D8C4D26F9DF2231D8AFF /* Pods-Tarot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tarot-umbrella.h"; sourceTree = "<group>"; };
+		512102C8724C92DA1FA3778160FF9774 /* Pods-Tarot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tarot.debug.xcconfig"; sourceTree = "<group>"; };
+		5241D509984B0264B9382B18F3AF8AEA /* Gradient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = Sources/Gradient.swift; sourceTree = "<group>"; };
+		548274CE4B94F1F92B6B642A7812DC12 /* Pods-Tarot-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tarot-acknowledgements.markdown"; sourceTree = "<group>"; };
+		57018038711B3956EBE877C5AFFFF81A /* Pods-Tarot-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tarot-Info.plist"; sourceTree = "<group>"; };
+		5AE10C64D988905AA87BF985E57DA67A /* Gyro.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gyro.swift; path = Sources/Gyro.swift; sourceTree = "<group>"; };
+		5DDC08620273A8817C4888FA2A98BD1F /* Shiny-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shiny-umbrella.h"; sourceTree = "<group>"; };
+		61D5BE65C4C8F96BA27340DB8985E3A4 /* Pods-TarotTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TarotTests-umbrella.h"; sourceTree = "<group>"; };
+		7329D3E8D780C49ABC94496FBB8C7817 /* Pods_TarotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TarotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		757C6B5D409A7399E7141B7AD967F955 /* Pods-Tarot-TarotUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tarot-TarotUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		76706187376B6102DCF5B2329D0D26BB /* Pods-TarotTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TarotTests-dummy.m"; sourceTree = "<group>"; };
+		84E81373F47194EB32BC3FED534619EA /* Shiny.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Shiny.modulemap; sourceTree = "<group>"; };
+		86236A47D77F9319E042B4849D130945 /* Pods-Tarot-TarotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tarot-TarotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AAA26B359852120A8E869E0D8F675D9 /* Shiny-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Shiny-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F70C82377CC4CC6E3CCC682AED6F7E4 /* Shiny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shiny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00443FB43417A50EFB92D4BD8C43C97 /* Pods-Tarot-TarotUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tarot-TarotUITests.modulemap"; sourceTree = "<group>"; };
+		ADDDBB7E8304EC1A580304F5104C6B6D /* Pods-Tarot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tarot-dummy.m"; sourceTree = "<group>"; };
+		AE5A101CDEBE6349064809CADB13AAC1 /* Pods-Tarot-TarotUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tarot-TarotUITests-umbrella.h"; sourceTree = "<group>"; };
+		AFFBA88C2F2275B0CD835E2233271BAD /* Pods-Tarot-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tarot-acknowledgements.plist"; sourceTree = "<group>"; };
+		B66988B5F3B4A37086AB7DF351AEB67F /* Shiny.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shiny.swift; path = Sources/Shiny.swift; sourceTree = "<group>"; };
+		B86807A49C5EDA1CD38B855A952E5109 /* Pods-Tarot-TarotUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tarot-TarotUITests-Info.plist"; sourceTree = "<group>"; };
+		BD2FB4C308C48F9985AFAF95B7E62ADF /* Pods-TarotTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TarotTests.modulemap"; sourceTree = "<group>"; };
+		C0AF6C982960C4FA33B152F8C36E823B /* Pods-Tarot-TarotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tarot-TarotUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CD196113A6E84D853D57FBD3AC3528AB /* Shiny-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Shiny-dummy.m"; sourceTree = "<group>"; };
+		CEA2356F22525B922A83EBB44F9B24FC /* Pods-TarotTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TarotTests-Info.plist"; sourceTree = "<group>"; };
+		D0AE53CD57D84A404B09A29175887380 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
+		D71D94D92E2A298480CBD6C84AEDD7FA /* Pods-TarotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TarotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D7F81F06F2108FEFAD9C698F763CC853 /* Pods_Tarot_TarotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tarot_TarotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9EC7B4AA89334316A99CC04F00314C8 /* Pods-Tarot-TarotUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tarot-TarotUITests-dummy.m"; sourceTree = "<group>"; };
+		DE8558DA76A1D5A7BA9038AACFC8D89C /* Shiny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Shiny.debug.xcconfig; sourceTree = "<group>"; };
+		E0314244AD045D539DAAE20E7C8DAB65 /* Pods-TarotTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TarotTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F018156687BBFCD9A34169FEA62A1932 /* Pods-Tarot-TarotUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tarot-TarotUITests-frameworks.sh"; sourceTree = "<group>"; };
+		F434853646308381AE61DA7B77412D2B /* Shiny-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shiny-prefix.pch"; sourceTree = "<group>"; };
+		FCBA8C65AD082272056C9BA74D68A473 /* Pods-Tarot-TarotUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tarot-TarotUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FD25D033276D0BD3063D2DD7AEA81251 /* Pods_Tarot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tarot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43E9E2D95D8FAD8078331777200D14BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7118BA956B00ADDAC888DA081D746324 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A2F109170733EDF5E6D12F340C08537 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189CBA9B2B98440685E70EF8AF61B60C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DAED5BC99C04161B6B6B1BB9115BBE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86BA121A16E2655EB754D67AEE10A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E4023B634D04A6E306BAFCEA722C5DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A4CC07936F5262DCA66A4B14926245 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		027A74EF2C742BF35E9E7E6F524A6AEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				519FB07DB59FCF7A3B06959E14CEBEC9 /* Shiny */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		154BFBA6BE5EF63086BAE4C59759045B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA9275448A0F9F06E859E9700ED1E19A /* Pods-Tarot */,
+				910824BACFA8E7D88F6B718F843E1EBB /* Pods-Tarot-TarotUITests */,
+				6D10443D58F35FACDC6DF2F40BE05C93 /* Pods-TarotTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		519FB07DB59FCF7A3B06959E14CEBEC9 /* Shiny */ = {
+			isa = PBXGroup;
+			children = (
+				D0AE53CD57D84A404B09A29175887380 /* Extensions.swift */,
+				5241D509984B0264B9382B18F3AF8AEA /* Gradient.swift */,
+				5AE10C64D988905AA87BF985E57DA67A /* Gyro.swift */,
+				28E28560C6A4CF3FD0A03A4AA5CB3EAC /* Scene.swift */,
+				B66988B5F3B4A37086AB7DF351AEB67F /* Shiny.swift */,
+				D96A1FA3DAED72B03C4A82DD2D3E8B5E /* Support Files */,
+			);
+			path = Shiny;
+			sourceTree = "<group>";
+		};
+		6D10443D58F35FACDC6DF2F40BE05C93 /* Pods-TarotTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD2FB4C308C48F9985AFAF95B7E62ADF /* Pods-TarotTests.modulemap */,
+				E0314244AD045D539DAAE20E7C8DAB65 /* Pods-TarotTests-acknowledgements.markdown */,
+				4A1DAC1F92010E1A8C03B4EAC7A83C3B /* Pods-TarotTests-acknowledgements.plist */,
+				76706187376B6102DCF5B2329D0D26BB /* Pods-TarotTests-dummy.m */,
+				CEA2356F22525B922A83EBB44F9B24FC /* Pods-TarotTests-Info.plist */,
+				61D5BE65C4C8F96BA27340DB8985E3A4 /* Pods-TarotTests-umbrella.h */,
+				D71D94D92E2A298480CBD6C84AEDD7FA /* Pods-TarotTests.debug.xcconfig */,
+				2E9DC7B2AF33D2C13A7ABCB679C32074 /* Pods-TarotTests.release.xcconfig */,
+			);
+			name = "Pods-TarotTests";
+			path = "Target Support Files/Pods-TarotTests";
+			sourceTree = "<group>";
+		};
+		840D3647EE1DA15DFF0959E954D86C5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD25D033276D0BD3063D2DD7AEA81251 /* Pods_Tarot.framework */,
+				D7F81F06F2108FEFAD9C698F763CC853 /* Pods_Tarot_TarotUITests.framework */,
+				7329D3E8D780C49ABC94496FBB8C7817 /* Pods_TarotTests.framework */,
+				9F70C82377CC4CC6E3CCC682AED6F7E4 /* Shiny.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		910824BACFA8E7D88F6B718F843E1EBB /* Pods-Tarot-TarotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A00443FB43417A50EFB92D4BD8C43C97 /* Pods-Tarot-TarotUITests.modulemap */,
+				FCBA8C65AD082272056C9BA74D68A473 /* Pods-Tarot-TarotUITests-acknowledgements.markdown */,
+				757C6B5D409A7399E7141B7AD967F955 /* Pods-Tarot-TarotUITests-acknowledgements.plist */,
+				D9EC7B4AA89334316A99CC04F00314C8 /* Pods-Tarot-TarotUITests-dummy.m */,
+				F018156687BBFCD9A34169FEA62A1932 /* Pods-Tarot-TarotUITests-frameworks.sh */,
+				B86807A49C5EDA1CD38B855A952E5109 /* Pods-Tarot-TarotUITests-Info.plist */,
+				AE5A101CDEBE6349064809CADB13AAC1 /* Pods-Tarot-TarotUITests-umbrella.h */,
+				86236A47D77F9319E042B4849D130945 /* Pods-Tarot-TarotUITests.debug.xcconfig */,
+				C0AF6C982960C4FA33B152F8C36E823B /* Pods-Tarot-TarotUITests.release.xcconfig */,
+			);
+			name = "Pods-Tarot-TarotUITests";
+			path = "Target Support Files/Pods-Tarot-TarotUITests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				027A74EF2C742BF35E9E7E6F524A6AEB /* Pods */,
+				840D3647EE1DA15DFF0959E954D86C5C /* Products */,
+				154BFBA6BE5EF63086BAE4C59759045B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D96A1FA3DAED72B03C4A82DD2D3E8B5E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84E81373F47194EB32BC3FED534619EA /* Shiny.modulemap */,
+				CD196113A6E84D853D57FBD3AC3528AB /* Shiny-dummy.m */,
+				9AAA26B359852120A8E869E0D8F675D9 /* Shiny-Info.plist */,
+				F434853646308381AE61DA7B77412D2B /* Shiny-prefix.pch */,
+				5DDC08620273A8817C4888FA2A98BD1F /* Shiny-umbrella.h */,
+				DE8558DA76A1D5A7BA9038AACFC8D89C /* Shiny.debug.xcconfig */,
+				47BACA84D34097DDEC34CFC2B436DC54 /* Shiny.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Shiny";
+			sourceTree = "<group>";
+		};
+		DA9275448A0F9F06E859E9700ED1E19A /* Pods-Tarot */ = {
+			isa = PBXGroup;
+			children = (
+				07237EC7D7C9C4F0D830A372A02BC048 /* Pods-Tarot.modulemap */,
+				548274CE4B94F1F92B6B642A7812DC12 /* Pods-Tarot-acknowledgements.markdown */,
+				AFFBA88C2F2275B0CD835E2233271BAD /* Pods-Tarot-acknowledgements.plist */,
+				ADDDBB7E8304EC1A580304F5104C6B6D /* Pods-Tarot-dummy.m */,
+				3855C9DBF6E2871EC18593D044F9E723 /* Pods-Tarot-frameworks.sh */,
+				57018038711B3956EBE877C5AFFFF81A /* Pods-Tarot-Info.plist */,
+				4F3EF9D87A24D8C4D26F9DF2231D8AFF /* Pods-Tarot-umbrella.h */,
+				512102C8724C92DA1FA3778160FF9774 /* Pods-Tarot.debug.xcconfig */,
+				2E165FC66DD0E986C5DEAC053A26BF48 /* Pods-Tarot.release.xcconfig */,
+			);
+			name = "Pods-Tarot";
+			path = "Target Support Files/Pods-Tarot";
+			sourceTree = "<group>";
+		};
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		034308B5BAB737B537C045840031A433 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7DB0D210CBEEDD31978BEBB3A54CACF /* Shiny-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F9C7D1CFD7BD77D063E2B4FB1977BDB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785A84CC71E63D18E3D997C708276EFF /* Pods-Tarot-TarotUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E740A26523F3DF8D93E8C714022CBAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89F68CC3A1D5BA6B0C65195E1566E365 /* Pods-TarotTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06ADCF119ECC9D025766D5BB46F89BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A6AF8CD477B665814B094FC9107CE9 /* Pods-Tarot-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		47A06A1F1DFE7F5C90360A0F1C1DDF2D /* Pods-Tarot-TarotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A5D5D5D6044F8BB8B0E5F6E45CFF5D7 /* Build configuration list for PBXNativeTarget "Pods-Tarot-TarotUITests" */;
+			buildPhases = (
+				3F9C7D1CFD7BD77D063E2B4FB1977BDB /* Headers */,
+				FEE77B14CA87827D3E782659A73CB6F6 /* Sources */,
+				43E9E2D95D8FAD8078331777200D14BB /* Frameworks */,
+				D878D5535A75B8C2905EC086E64772FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C60BF4FF1A2681AD2F8C46FE0C94DACE /* PBXTargetDependency */,
+			);
+			name = "Pods-Tarot-TarotUITests";
+			productName = Pods_Tarot_TarotUITests;
+			productReference = D7F81F06F2108FEFAD9C698F763CC853 /* Pods_Tarot_TarotUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		71E64F2DBC59C858F34693C2433C987A /* Shiny */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5941E6DB5017AB00A0FD68858EAC9EA9 /* Build configuration list for PBXNativeTarget "Shiny" */;
+			buildPhases = (
+				034308B5BAB737B537C045840031A433 /* Headers */,
+				57AAF27E6BB92C3491034EDD181227A0 /* Sources */,
+				4E4023B634D04A6E306BAFCEA722C5DE /* Frameworks */,
+				600A3D068A84B5D526C3A1DF349D790C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shiny;
+			productName = Shiny;
+			productReference = 9F70C82377CC4CC6E3CCC682AED6F7E4 /* Shiny.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B6A474D36BF3A4BE74756F4EA6DF0996 /* Pods-TarotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8C0E451DF99DB30E967FEE17F91A77F /* Build configuration list for PBXNativeTarget "Pods-TarotTests" */;
+			buildPhases = (
+				8E740A26523F3DF8D93E8C714022CBAB /* Headers */,
+				364B515AE0176D03F9B80CAF89ACB789 /* Sources */,
+				4A2F109170733EDF5E6D12F340C08537 /* Frameworks */,
+				0CE41FC3A1ADE0669A4EE2EF0480D1ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D4882B092CB8595B91E2D58FE7D8EED /* PBXTargetDependency */,
+			);
+			name = "Pods-TarotTests";
+			productName = Pods_TarotTests;
+			productReference = 7329D3E8D780C49ABC94496FBB8C7817 /* Pods_TarotTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F9186C5ED4048E5FDCEE38700F9D9E74 /* Pods-Tarot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF02B4532D6A79240E68643357F3B96 /* Build configuration list for PBXNativeTarget "Pods-Tarot" */;
+			buildPhases = (
+				B06ADCF119ECC9D025766D5BB46F89BB /* Headers */,
+				E125476CBEF4B66F9AF9E083D0B548AB /* Sources */,
+				4DAED5BC99C04161B6B6B1BB9115BBE2 /* Frameworks */,
+				B436B79B94A5ACFB1F41247F23F483FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71C3B3C66833CFEF5DB567993BC0CC89 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tarot";
+			productName = Pods_Tarot;
+			productReference = FD25D033276D0BD3063D2DD7AEA81251 /* Pods_Tarot.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2660;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 840D3647EE1DA15DFF0959E954D86C5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9186C5ED4048E5FDCEE38700F9D9E74 /* Pods-Tarot */,
+				47A06A1F1DFE7F5C90360A0F1C1DDF2D /* Pods-Tarot-TarotUITests */,
+				B6A474D36BF3A4BE74756F4EA6DF0996 /* Pods-TarotTests */,
+				71E64F2DBC59C858F34693C2433C987A /* Shiny */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CE41FC3A1ADE0669A4EE2EF0480D1ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		600A3D068A84B5D526C3A1DF349D790C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B436B79B94A5ACFB1F41247F23F483FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D878D5535A75B8C2905EC086E64772FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		364B515AE0176D03F9B80CAF89ACB789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948CC0ABAAD043F49EF9B9DDF87D2C84 /* Pods-TarotTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57AAF27E6BB92C3491034EDD181227A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCAF6A7FD703CF37C86A60F9EE09C0C /* Extensions.swift in Sources */,
+				533FF0DEC55CF298734CB8B06BA5B9AF /* Gradient.swift in Sources */,
+				1FDA33B56006852182702167C6C5551C /* Gyro.swift in Sources */,
+				4E188F1946D8400E0CA5B12FFA2A4D5B /* Scene.swift in Sources */,
+				31D79577CAEFD172FA239DCEB577FC51 /* Shiny.swift in Sources */,
+				D46B9022903D255988317732C6682D9F /* Shiny-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E125476CBEF4B66F9AF9E083D0B548AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409691F9B08C41B5DDF5F8296C43570A /* Pods-Tarot-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE77B14CA87827D3E782659A73CB6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE50123C14FF99378BD52723D590E309 /* Pods-Tarot-TarotUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D4882B092CB8595B91E2D58FE7D8EED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tarot";
+			target = F9186C5ED4048E5FDCEE38700F9D9E74 /* Pods-Tarot */;
+			targetProxy = 11F7D1375627C9964DC8DF78F6EC5D6C /* PBXContainerItemProxy */;
+		};
+		71C3B3C66833CFEF5DB567993BC0CC89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shiny;
+			target = 71E64F2DBC59C858F34693C2433C987A /* Shiny */;
+			targetProxy = FC2D49052874346F07F42431E31AB24A /* PBXContainerItemProxy */;
+		};
+		C60BF4FF1A2681AD2F8C46FE0C94DACE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shiny;
+			target = 71E64F2DBC59C858F34693C2433C987A /* Shiny */;
+			targetProxy = F1354E0ADF9352478541EC9722AF3F60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02665A78B7241F2EA5933A94152D8B58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0AF6C982960C4FA33B152F8C36E823B /* Pods-Tarot-TarotUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tarot-TarotUITests/Pods-Tarot-TarotUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tarot-TarotUITests/Pods-Tarot-TarotUITests.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		06FBDAC3646170E7EEB735944CE3F45A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE8558DA76A1D5A7BA9038AACFC8D89C /* Shiny.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Shiny/Shiny-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Shiny/Shiny-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Shiny/Shiny.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_MODULE_NAME = Shiny;
+				PRODUCT_NAME = Shiny;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		162B3562F4C00560EFBFD1E567FCCF3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 512102C8724C92DA1FA3778160FF9774 /* Pods-Tarot.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tarot/Pods-Tarot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tarot/Pods-Tarot.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		19B3CB3C7CEA22F2F9D99349BB0AE604 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E165FC66DD0E986C5DEAC053A26BF48 /* Pods-Tarot.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tarot/Pods-Tarot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tarot/Pods-Tarot.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2D2C7B66D9DE2B036D6D76AAE413700F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86236A47D77F9319E042B4849D130945 /* Pods-Tarot-TarotUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tarot-TarotUITests/Pods-Tarot-TarotUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tarot-TarotUITests/Pods-Tarot-TarotUITests.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59E8734DA70715406493CA912F854277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5A49448602EC1B17D12ADB02D6EE73BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		7A9FE0EDED4FAD6D4340A444DC6D2111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E9DC7B2AF33D2C13A7ABCB679C32074 /* Pods-TarotTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-TarotTests/Pods-TarotTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TarotTests/Pods-TarotTests.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3338A019E6BDFE9CDCC44C44E2560FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D71D94D92E2A298480CBD6C84AEDD7FA /* Pods-TarotTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-TarotTests/Pods-TarotTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TarotTests/Pods-TarotTests.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED02B3B9CD544ED1EA2464B762299861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47BACA84D34097DDEC34CFC2B436DC54 /* Shiny.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Shiny/Shiny-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Shiny/Shiny-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Shiny/Shiny.modulemap";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_MODULE_NAME = Shiny;
+				PRODUCT_NAME = Shiny;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59E8734DA70715406493CA912F854277 /* Debug */,
+				5A49448602EC1B17D12ADB02D6EE73BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5941E6DB5017AB00A0FD68858EAC9EA9 /* Build configuration list for PBXNativeTarget "Shiny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06FBDAC3646170E7EEB735944CE3F45A /* Debug */,
+				ED02B3B9CD544ED1EA2464B762299861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A5D5D5D6044F8BB8B0E5F6E45CFF5D7 /* Build configuration list for PBXNativeTarget "Pods-Tarot-TarotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D2C7B66D9DE2B036D6D76AAE413700F /* Debug */,
+				02665A78B7241F2EA5933A94152D8B58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FF02B4532D6A79240E68643357F3B96 /* Build configuration list for PBXNativeTarget "Pods-Tarot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162B3562F4C00560EFBFD1E567FCCF3E /* Debug */,
+				19B3CB3C7CEA22F2F9D99349BB0AE604 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8C0E451DF99DB30E967FEE17F91A77F /* Build configuration list for PBXNativeTarget "Pods-TarotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3338A019E6BDFE9CDCC44C44E2560FA /* Debug */,
+				7A9FE0EDED4FAD6D4340A444DC6D2111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -1,0 +1,1572 @@
+[
+  {
+    "id": "the_fool",
+    "name": "The Fool",
+    "suit": "Air",
+    "coreEssence": "A leap into the unknown guided by curiosity and trust.",
+    "lightExpression": "Freedom, openness, and willingness to begin a new journey.",
+    "shadowExpression": "Naivety, recklessness, or ignoring consequences.",
+    "loveTheme": "Spontaneous romance or emotional openness to new love.",
+    "careerTheme": "Starting a new venture or taking a creative risk.",
+    "spiritualTheme": "Trusting the unfolding path of the universe.",
+    "advice": "Embrace the journey but stay aware of your footing.",
+    "emotionalTone": "hopeful and adventurous",
+    "keywords": [
+      "beginnings",
+      "freedom",
+      "risk",
+      "journey",
+      "innocence"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "The Innocent"
+  },
+  {
+    "id": "the_magician",
+    "name": "The Magician",
+    "suit": "Air",
+    "coreEssence": "The power to turn intention into reality.",
+    "lightExpression": "Skill, confidence, creativity, and personal agency.",
+    "shadowExpression": "Manipulation, illusion, or misuse of influence.",
+    "loveTheme": "Strong attraction and intentional communication.",
+    "careerTheme": "Using talents effectively to create opportunity.",
+    "spiritualTheme": "Recognizing your role as a creator of your reality.",
+    "advice": "Focus your will and take decisive action.",
+    "emotionalTone": "confident and focused",
+    "keywords": [
+      "manifestation",
+      "power",
+      "creation",
+      "skill",
+      "initiative"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "The Creator"
+  },
+  {
+    "id": "the_high_priestess",
+    "name": "The High Priestess",
+    "suit": "Water",
+    "coreEssence": "Deep intuition and hidden wisdom.",
+    "lightExpression": "Insight, spiritual awareness, and inner knowing.",
+    "shadowExpression": "Secrets, emotional distance, or ignoring intuition.",
+    "loveTheme": "Quiet emotional bonds or unspoken feelings.",
+    "careerTheme": "Research, reflection, and thoughtful strategy.",
+    "spiritualTheme": "Listening to the voice within.",
+    "advice": "Pause and allow truth to reveal itself.",
+    "emotionalTone": "calm and reflective",
+    "keywords": [
+      "intuition",
+      "mystery",
+      "wisdom",
+      "stillness",
+      "inner voice"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "The Mystic"
+  },
+  {
+    "id": "the_empress",
+    "name": "The Empress",
+    "suit": "Earth",
+    "coreEssence": "Creative abundance and nurturing growth.",
+    "lightExpression": "Fertility, compassion, beauty, and emotional warmth.",
+    "shadowExpression": "Overindulgence, dependence, or stagnation.",
+    "loveTheme": "Deep affection and nurturing partnership.",
+    "careerTheme": "Creative projects flourishing and expanding.",
+    "spiritualTheme": "Connection with nature and life cycles.",
+    "advice": "Nurture what you want to grow.",
+    "emotionalTone": "warm and loving",
+    "keywords": [
+      "abundance",
+      "fertility",
+      "growth",
+      "beauty",
+      "nurture"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "The Mother"
+  },
+  {
+    "id": "the_emperor",
+    "name": "The Emperor",
+    "suit": "Fire",
+    "coreEssence": "Structure, leadership, and authority.",
+    "lightExpression": "Confidence, discipline, and stable foundations.",
+    "shadowExpression": "Control, rigidity, or domination.",
+    "loveTheme": "Protective commitment and stability.",
+    "careerTheme": "Leadership roles and strategic planning.",
+    "spiritualTheme": "Understanding responsibility and order.",
+    "advice": "Lead with strength but remain fair.",
+    "emotionalTone": "grounded and authoritative",
+    "keywords": [
+      "structure",
+      "power",
+      "order",
+      "leadership",
+      "authority"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "The Ruler"
+  },
+  {
+    "id": "the_hierophant",
+    "name": "The Hierophant",
+    "suit": "Major Arcana",
+    "coreEssence": "Spiritual tradition and shared wisdom",
+    "lightExpression": "The positive expression of the hierophant energy.",
+    "shadowExpression": "The shadow side of the hierophant energy.",
+    "loveTheme": "The Hierophant influences emotional connections and relationships.",
+    "careerTheme": "The Hierophant highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Hierophant represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Hierophant applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the hierophant",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_lovers",
+    "name": "The Lovers",
+    "suit": "Major Arcana",
+    "coreEssence": "Union, love, and meaningful choice",
+    "lightExpression": "The positive expression of the lovers energy.",
+    "shadowExpression": "The shadow side of the lovers energy.",
+    "loveTheme": "The Lovers influences emotional connections and relationships.",
+    "careerTheme": "The Lovers highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Lovers represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Lovers applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the lovers",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_chariot",
+    "name": "The Chariot",
+    "suit": "Major Arcana",
+    "coreEssence": "Focused determination and forward movement",
+    "lightExpression": "The positive expression of the chariot energy.",
+    "shadowExpression": "The shadow side of the chariot energy.",
+    "loveTheme": "The Chariot influences emotional connections and relationships.",
+    "careerTheme": "The Chariot highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Chariot represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Chariot applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the chariot",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "strength",
+    "name": "Strength",
+    "suit": "Major Arcana",
+    "coreEssence": "Compassionate courage and inner power",
+    "lightExpression": "The positive expression of strength energy.",
+    "shadowExpression": "The shadow side of strength energy.",
+    "loveTheme": "Strength influences emotional connections and relationships.",
+    "careerTheme": "Strength highlights growth and lessons within career paths.",
+    "spiritualTheme": "Strength represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of Strength applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "strength",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_hermit",
+    "name": "The Hermit",
+    "suit": "Major Arcana",
+    "coreEssence": "Solitary search for truth",
+    "lightExpression": "The positive expression of the hermit energy.",
+    "shadowExpression": "The shadow side of the hermit energy.",
+    "loveTheme": "The Hermit influences emotional connections and relationships.",
+    "careerTheme": "The Hermit highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Hermit represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Hermit applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the hermit",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "wheel_of_fortune",
+    "name": "Wheel of Fortune",
+    "suit": "Major Arcana",
+    "coreEssence": "Cycles of change and destiny",
+    "lightExpression": "The positive expression of wheel of fortune energy.",
+    "shadowExpression": "The shadow side of wheel of fortune energy.",
+    "loveTheme": "Wheel of Fortune influences emotional connections and relationships.",
+    "careerTheme": "Wheel of Fortune highlights growth and lessons within career paths.",
+    "spiritualTheme": "Wheel of Fortune represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of Wheel of Fortune applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "wheel of fortune",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "justice",
+    "name": "Justice",
+    "suit": "Major Arcana",
+    "coreEssence": "Truth, fairness, and accountability",
+    "lightExpression": "The positive expression of justice energy.",
+    "shadowExpression": "The shadow side of justice energy.",
+    "loveTheme": "Justice influences emotional connections and relationships.",
+    "careerTheme": "Justice highlights growth and lessons within career paths.",
+    "spiritualTheme": "Justice represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of Justice applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "justice",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_hanged_man",
+    "name": "The Hanged Man",
+    "suit": "Major Arcana",
+    "coreEssence": "Perspective gained through surrender",
+    "lightExpression": "The positive expression of the hanged man energy.",
+    "shadowExpression": "The shadow side of the hanged man energy.",
+    "loveTheme": "The Hanged Man influences emotional connections and relationships.",
+    "careerTheme": "The Hanged Man highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Hanged Man represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Hanged Man applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the hanged man",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "death",
+    "name": "Death",
+    "suit": "Major Arcana",
+    "coreEssence": "Transformation and the end of a cycle",
+    "lightExpression": "The positive expression of death energy.",
+    "shadowExpression": "The shadow side of death energy.",
+    "loveTheme": "Death influences emotional connections and relationships.",
+    "careerTheme": "Death highlights growth and lessons within career paths.",
+    "spiritualTheme": "Death represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of Death applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "death",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "temperance",
+    "name": "Temperance",
+    "suit": "Major Arcana",
+    "coreEssence": "Balance, harmony, and integration",
+    "lightExpression": "The positive expression of temperance energy.",
+    "shadowExpression": "The shadow side of temperance energy.",
+    "loveTheme": "Temperance influences emotional connections and relationships.",
+    "careerTheme": "Temperance highlights growth and lessons within career paths.",
+    "spiritualTheme": "Temperance represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of Temperance applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "temperance",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_devil",
+    "name": "The Devil",
+    "suit": "Major Arcana",
+    "coreEssence": "Attachment, temptation, and material focus",
+    "lightExpression": "The positive expression of the devil energy.",
+    "shadowExpression": "The shadow side of the devil energy.",
+    "loveTheme": "The Devil influences emotional connections and relationships.",
+    "careerTheme": "The Devil highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Devil represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Devil applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the devil",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_tower",
+    "name": "The Tower",
+    "suit": "Major Arcana",
+    "coreEssence": "Sudden upheaval that reveals truth",
+    "lightExpression": "The positive expression of the tower energy.",
+    "shadowExpression": "The shadow side of the tower energy.",
+    "loveTheme": "The Tower influences emotional connections and relationships.",
+    "careerTheme": "The Tower highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Tower represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Tower applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the tower",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_star",
+    "name": "The Star",
+    "suit": "Major Arcana",
+    "coreEssence": "Hope, healing, and spiritual renewal",
+    "lightExpression": "The positive expression of the star energy.",
+    "shadowExpression": "The shadow side of the star energy.",
+    "loveTheme": "The Star influences emotional connections and relationships.",
+    "careerTheme": "The Star highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Star represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Star applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the star",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_moon",
+    "name": "The Moon",
+    "suit": "Major Arcana",
+    "coreEssence": "Illusion, intuition, and the subconscious",
+    "lightExpression": "The positive expression of the moon energy.",
+    "shadowExpression": "The shadow side of the moon energy.",
+    "loveTheme": "The Moon influences emotional connections and relationships.",
+    "careerTheme": "The Moon highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Moon represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Moon applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the moon",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_sun",
+    "name": "The Sun",
+    "suit": "Major Arcana",
+    "coreEssence": "Joy, vitality, and clarity",
+    "lightExpression": "The positive expression of the sun energy.",
+    "shadowExpression": "The shadow side of the sun energy.",
+    "loveTheme": "The Sun influences emotional connections and relationships.",
+    "careerTheme": "The Sun highlights growth and lessons within career paths.",
+    "spiritualTheme": "The Sun represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The Sun applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the sun",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "judgement",
+    "name": "Judgement",
+    "suit": "Major Arcana",
+    "coreEssence": "Awakening and personal reckoning",
+    "lightExpression": "The positive expression of judgement energy.",
+    "shadowExpression": "The shadow side of judgement energy.",
+    "loveTheme": "Judgement influences emotional connections and relationships.",
+    "careerTheme": "Judgement highlights growth and lessons within career paths.",
+    "spiritualTheme": "Judgement represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of Judgement applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "judgement",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "the_world",
+    "name": "The World",
+    "suit": "Major Arcana",
+    "coreEssence": "Completion, integration, and fulfillment",
+    "lightExpression": "The positive expression of the world energy.",
+    "shadowExpression": "The shadow side of the world energy.",
+    "loveTheme": "The World influences emotional connections and relationships.",
+    "careerTheme": "The World highlights growth and lessons within career paths.",
+    "spiritualTheme": "The World represents spiritual evolution and awareness.",
+    "advice": "Reflect on how the energy of The World applies to your situation.",
+    "emotionalTone": "reflective",
+    "keywords": [
+      "the world",
+      "archetype",
+      "major arcana"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Archetypal Guide"
+  },
+  {
+    "id": "ace_of_wands",
+    "name": "Ace of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Ace of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Ace of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Ace of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Ace of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "ace",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Ace Archetype"
+  },
+  {
+    "id": "two_of_wands",
+    "name": "Two of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Two of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Two of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Two of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Two of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "two",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Two Archetype"
+  },
+  {
+    "id": "three_of_wands",
+    "name": "Three of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Three of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Three of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Three of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Three of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "three",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Three Archetype"
+  },
+  {
+    "id": "four_of_wands",
+    "name": "Four of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Four of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Four of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Four of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Four of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "four",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Four Archetype"
+  },
+  {
+    "id": "five_of_wands",
+    "name": "Five of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Five of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Five of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Five of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Five of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "five",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Five Archetype"
+  },
+  {
+    "id": "six_of_wands",
+    "name": "Six of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Six of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Six of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Six of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Six of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "six",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Six Archetype"
+  },
+  {
+    "id": "seven_of_wands",
+    "name": "Seven of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Seven of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Seven of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Seven of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Seven of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "seven",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Seven Archetype"
+  },
+  {
+    "id": "eight_of_wands",
+    "name": "Eight of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Eight of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Eight of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Eight of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Eight of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "eight",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Eight Archetype"
+  },
+  {
+    "id": "nine_of_wands",
+    "name": "Nine of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Nine of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Nine of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Nine of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Nine of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "nine",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Nine Archetype"
+  },
+  {
+    "id": "ten_of_wands",
+    "name": "Ten of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Ten of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Ten of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Ten of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Ten of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "ten",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Ten Archetype"
+  },
+  {
+    "id": "page_of_wands",
+    "name": "Page of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Page of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Page of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Page of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Page of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "page",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Page Archetype"
+  },
+  {
+    "id": "knight_of_wands",
+    "name": "Knight of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Knight of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Knight of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Knight of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Knight of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "knight",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Knight Archetype"
+  },
+  {
+    "id": "queen_of_wands",
+    "name": "Queen of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of Queen of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, Queen of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, Queen of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, Queen of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "queen",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "Queen Archetype"
+  },
+  {
+    "id": "king_of_wands",
+    "name": "King of Wands",
+    "suit": "Wands",
+    "coreEssence": "The core energy of King of Wands reflecting the qualities of the wands suit.",
+    "lightExpression": "Constructive growth and balanced expression of wands energy.",
+    "shadowExpression": "Imbalance or excess within the themes of wands.",
+    "loveTheme": "In relationships, King of Wands highlights emotional or energetic themes tied to wands.",
+    "careerTheme": "In career matters, King of Wands suggests developments related to wands energy.",
+    "spiritualTheme": "Spiritually, King of Wands invites reflection on the lessons of the wands element.",
+    "advice": "Consider how the qualities of wands energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "wands",
+      "king",
+      "energy"
+    ],
+    "elementalEnergy": "Fire",
+    "archetypeRole": "King Archetype"
+  },
+  {
+    "id": "ace_of_cups",
+    "name": "Ace of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Ace of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Ace of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Ace of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Ace of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "ace",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Ace Archetype"
+  },
+  {
+    "id": "two_of_cups",
+    "name": "Two of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Two of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Two of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Two of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Two of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "two",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Two Archetype"
+  },
+  {
+    "id": "three_of_cups",
+    "name": "Three of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Three of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Three of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Three of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Three of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "three",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Three Archetype"
+  },
+  {
+    "id": "four_of_cups",
+    "name": "Four of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Four of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Four of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Four of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Four of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "four",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Four Archetype"
+  },
+  {
+    "id": "five_of_cups",
+    "name": "Five of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Five of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Five of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Five of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Five of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "five",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Five Archetype"
+  },
+  {
+    "id": "six_of_cups",
+    "name": "Six of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Six of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Six of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Six of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Six of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "six",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Six Archetype"
+  },
+  {
+    "id": "seven_of_cups",
+    "name": "Seven of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Seven of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Seven of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Seven of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Seven of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "seven",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Seven Archetype"
+  },
+  {
+    "id": "eight_of_cups",
+    "name": "Eight of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Eight of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Eight of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Eight of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Eight of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "eight",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Eight Archetype"
+  },
+  {
+    "id": "nine_of_cups",
+    "name": "Nine of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Nine of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Nine of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Nine of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Nine of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "nine",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Nine Archetype"
+  },
+  {
+    "id": "ten_of_cups",
+    "name": "Ten of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Ten of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Ten of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Ten of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Ten of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "ten",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Ten Archetype"
+  },
+  {
+    "id": "page_of_cups",
+    "name": "Page of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Page of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Page of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Page of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Page of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "page",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Page Archetype"
+  },
+  {
+    "id": "knight_of_cups",
+    "name": "Knight of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Knight of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Knight of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Knight of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Knight of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "knight",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Knight Archetype"
+  },
+  {
+    "id": "queen_of_cups",
+    "name": "Queen of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of Queen of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, Queen of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, Queen of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, Queen of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "queen",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "Queen Archetype"
+  },
+  {
+    "id": "king_of_cups",
+    "name": "King of Cups",
+    "suit": "Cups",
+    "coreEssence": "The core energy of King of Cups reflecting the qualities of the cups suit.",
+    "lightExpression": "Constructive growth and balanced expression of cups energy.",
+    "shadowExpression": "Imbalance or excess within the themes of cups.",
+    "loveTheme": "In relationships, King of Cups highlights emotional or energetic themes tied to cups.",
+    "careerTheme": "In career matters, King of Cups suggests developments related to cups energy.",
+    "spiritualTheme": "Spiritually, King of Cups invites reflection on the lessons of the cups element.",
+    "advice": "Consider how the qualities of cups energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "cups",
+      "king",
+      "energy"
+    ],
+    "elementalEnergy": "Water",
+    "archetypeRole": "King Archetype"
+  },
+  {
+    "id": "ace_of_swords",
+    "name": "Ace of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Ace of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Ace of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Ace of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Ace of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "ace",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Ace Archetype"
+  },
+  {
+    "id": "two_of_swords",
+    "name": "Two of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Two of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Two of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Two of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Two of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "two",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Two Archetype"
+  },
+  {
+    "id": "three_of_swords",
+    "name": "Three of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Three of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Three of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Three of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Three of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "three",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Three Archetype"
+  },
+  {
+    "id": "four_of_swords",
+    "name": "Four of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Four of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Four of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Four of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Four of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "four",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Four Archetype"
+  },
+  {
+    "id": "five_of_swords",
+    "name": "Five of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Five of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Five of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Five of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Five of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "five",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Five Archetype"
+  },
+  {
+    "id": "six_of_swords",
+    "name": "Six of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Six of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Six of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Six of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Six of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "six",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Six Archetype"
+  },
+  {
+    "id": "seven_of_swords",
+    "name": "Seven of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Seven of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Seven of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Seven of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Seven of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "seven",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Seven Archetype"
+  },
+  {
+    "id": "eight_of_swords",
+    "name": "Eight of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Eight of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Eight of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Eight of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Eight of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "eight",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Eight Archetype"
+  },
+  {
+    "id": "nine_of_swords",
+    "name": "Nine of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Nine of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Nine of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Nine of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Nine of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "nine",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Nine Archetype"
+  },
+  {
+    "id": "ten_of_swords",
+    "name": "Ten of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Ten of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Ten of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Ten of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Ten of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "ten",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Ten Archetype"
+  },
+  {
+    "id": "page_of_swords",
+    "name": "Page of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Page of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Page of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Page of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Page of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "page",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Page Archetype"
+  },
+  {
+    "id": "knight_of_swords",
+    "name": "Knight of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Knight of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Knight of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Knight of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Knight of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "knight",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Knight Archetype"
+  },
+  {
+    "id": "queen_of_swords",
+    "name": "Queen of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of Queen of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, Queen of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, Queen of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, Queen of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "queen",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "Queen Archetype"
+  },
+  {
+    "id": "king_of_swords",
+    "name": "King of Swords",
+    "suit": "Swords",
+    "coreEssence": "The core energy of King of Swords reflecting the qualities of the swords suit.",
+    "lightExpression": "Constructive growth and balanced expression of swords energy.",
+    "shadowExpression": "Imbalance or excess within the themes of swords.",
+    "loveTheme": "In relationships, King of Swords highlights emotional or energetic themes tied to swords.",
+    "careerTheme": "In career matters, King of Swords suggests developments related to swords energy.",
+    "spiritualTheme": "Spiritually, King of Swords invites reflection on the lessons of the swords element.",
+    "advice": "Consider how the qualities of swords energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "swords",
+      "king",
+      "energy"
+    ],
+    "elementalEnergy": "Air",
+    "archetypeRole": "King Archetype"
+  },
+  {
+    "id": "ace_of_pentacles",
+    "name": "Ace of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Ace of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Ace of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Ace of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Ace of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "ace",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Ace Archetype"
+  },
+  {
+    "id": "two_of_pentacles",
+    "name": "Two of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Two of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Two of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Two of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Two of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "two",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Two Archetype"
+  },
+  {
+    "id": "three_of_pentacles",
+    "name": "Three of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Three of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Three of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Three of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Three of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "three",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Three Archetype"
+  },
+  {
+    "id": "four_of_pentacles",
+    "name": "Four of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Four of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Four of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Four of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Four of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "four",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Four Archetype"
+  },
+  {
+    "id": "five_of_pentacles",
+    "name": "Five of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Five of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Five of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Five of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Five of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "five",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Five Archetype"
+  },
+  {
+    "id": "six_of_pentacles",
+    "name": "Six of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Six of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Six of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Six of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Six of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "six",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Six Archetype"
+  },
+  {
+    "id": "seven_of_pentacles",
+    "name": "Seven of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Seven of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Seven of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Seven of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Seven of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "seven",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Seven Archetype"
+  },
+  {
+    "id": "eight_of_pentacles",
+    "name": "Eight of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Eight of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Eight of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Eight of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Eight of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "eight",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Eight Archetype"
+  },
+  {
+    "id": "nine_of_pentacles",
+    "name": "Nine of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Nine of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Nine of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Nine of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Nine of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "nine",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Nine Archetype"
+  },
+  {
+    "id": "ten_of_pentacles",
+    "name": "Ten of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Ten of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Ten of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Ten of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Ten of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "ten",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Ten Archetype"
+  },
+  {
+    "id": "page_of_pentacles",
+    "name": "Page of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Page of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Page of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Page of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Page of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "page",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Page Archetype"
+  },
+  {
+    "id": "knight_of_pentacles",
+    "name": "Knight of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Knight of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Knight of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Knight of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Knight of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "knight",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Knight Archetype"
+  },
+  {
+    "id": "queen_of_pentacles",
+    "name": "Queen of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of Queen of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, Queen of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, Queen of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, Queen of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "queen",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "Queen Archetype"
+  },
+  {
+    "id": "king_of_pentacles",
+    "name": "King of Pentacles",
+    "suit": "Pentacles",
+    "coreEssence": "The core energy of King of Pentacles reflecting the qualities of the pentacles suit.",
+    "lightExpression": "Constructive growth and balanced expression of pentacles energy.",
+    "shadowExpression": "Imbalance or excess within the themes of pentacles.",
+    "loveTheme": "In relationships, King of Pentacles highlights emotional or energetic themes tied to pentacles.",
+    "careerTheme": "In career matters, King of Pentacles suggests developments related to pentacles energy.",
+    "spiritualTheme": "Spiritually, King of Pentacles invites reflection on the lessons of the pentacles element.",
+    "advice": "Consider how the qualities of pentacles energy can guide your next step.",
+    "emotionalTone": "dynamic",
+    "keywords": [
+      "pentacles",
+      "king",
+      "energy"
+    ],
+    "elementalEnergy": "Earth",
+    "archetypeRole": "King Archetype"
+  }
+]
