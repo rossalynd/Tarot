@@ -11,11 +11,10 @@ import AVFoundation
 
 struct DeckView: View {
     @Binding var navigationPath: NavigationPath
-    @Binding var selectedCards: [Card]
+    @Bindable var session: ReadingSession
+
     @State private var cardRevealPlayer: AVAudioPlayer?
     @State private var cardSelectPlayer: AVAudioPlayer?
-
-    let spreadCount: Int
 
     @State private var deck: [Card] = []
     @State private var visibleCardCount: Int = 0
@@ -72,7 +71,7 @@ struct DeckView: View {
         }
         .onAppear {
             deck = shuffleDeck(cards: createDeck())
-            selectedCards = []
+            session.selectedCards = []
             revealCardsStaggered()
         }
         .onDisappear {
@@ -143,11 +142,14 @@ struct DeckView: View {
         overallIndex: Int
     ) -> some View {
         let isVisible = overallIndex < visibleCardCount
-        let isSelected = selectedCards.contains { $0.id == card.id }
+        let isSelected = session.selectedCards.contains { $0.id == card.id }
         let isAnimating = animatingCards.contains(card.id)
 
         let shouldShowCard = isVisible && !isSelected && !isAnimating
-        let canTapCard = shouldShowCard && selectedCards.count < spreadCount && flyingCard == nil
+        let canTapCard =
+            shouldShowCard &&
+            session.selectedCards.count < session.spreadCount &&
+            flyingCard == nil
 
         return GeometryReader { geo in
             CardView(card: card, isFaceUp: false)
@@ -182,7 +184,7 @@ struct DeckView: View {
 
     private var selectedCardsTray: some View {
         VStack(spacing: 8) {
-            Text("Selected Cards (\(selectedCards.count)/\(spreadCount))")
+            Text("Selected Cards (\(session.selectedCards.count)/\(session.spreadCount))")
                 .font(.headline)
                 .padding(.top, 8)
 
@@ -211,8 +213,8 @@ struct DeckView: View {
                 Spacer()
                     .containerRelativeFrame(.horizontal)
 
-                HStack() {
-                    ForEach(selectedCards) { card in
+                HStack {
+                    ForEach(session.selectedCards) { card in
                         CardView(card: card, isFaceUp: true)
                             .frame(
                                 width: selectedCardSize.width,
@@ -221,7 +223,6 @@ struct DeckView: View {
                             .padding(.trailing, 10)
                     }
                 }
-                
             }
         }
     }
@@ -236,14 +237,14 @@ struct DeckView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(
-                    selectedCards.count == spreadCount
+                    session.selectedCards.count == session.spreadCount
                     ? Color.blue
                     : Color.gray.opacity(0.4)
                 )
                 .cornerRadius(10)
         }
-        .disabled(selectedCards.count != spreadCount)
-        .opacity(selectedCards.count == spreadCount ? 1 : 0.35)
+        .disabled(session.selectedCards.count != session.spreadCount)
+        .opacity(session.selectedCards.count == session.spreadCount ? 1 : 0.35)
     }
 
     private func flyingCardView(
@@ -313,7 +314,7 @@ struct DeckView: View {
         let spacing: CGFloat = 15
         let horizontalPadding: CGFloat = 24
 
-        let totalCount = selectedCards.count + 1
+        let totalCount = session.selectedCards.count + 1
 
         let totalWidth =
             CGFloat(totalCount) * cardWidth +
@@ -341,11 +342,12 @@ struct DeckView: View {
     }
 
     private func selectCard(_ card: Card, at position: CGPoint) {
-        guard selectedCards.count < spreadCount else { return }
-        guard !selectedCards.contains(where: { $0.id == card.id }) else { return }
+        guard session.selectedCards.count < session.spreadCount else { return }
+        guard !session.selectedCards.contains(where: { $0.id == card.id }) else { return }
         guard flyingCard == nil else { return }
-        
+
         playSound(named: "cardSelect")
+
         animatingCards.insert(card.id)
         activeParticles.append((id: card.id, position: position))
 
@@ -353,7 +355,7 @@ struct DeckView: View {
             id: card.id,
             card: card,
             startPosition: position,
-            targetIndex: selectedCards.count
+            targetIndex: session.selectedCards.count
         )
 
         flightPhase = .start
@@ -373,7 +375,7 @@ struct DeckView: View {
             transaction.disablesAnimations = true
 
             withTransaction(transaction) {
-                selectedCards.append(card)
+                session.selectedCards.append(card)
                 flyingCard = nil
                 animatingCards.remove(card.id)
             }
@@ -386,7 +388,7 @@ struct DeckView: View {
 
     private func revealCardsStaggered() {
         playSound(named: "cardReveal")
-        
+
         for i in 0..<deck.count {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.02) {
                 withAnimation(.smooth(duration: 0.2)) {
@@ -428,7 +430,7 @@ struct DeckView: View {
 
         return names.map { Card(name: $0) }
     }
-    
+
     private func playSound(named name: String, extension fileExtension: String = "mp3") {
         guard let url = Bundle.main.url(forResource: name, withExtension: fileExtension) else {
             print("Sound file not found: \(name).\(fileExtension)")
@@ -450,4 +452,3 @@ struct DeckView: View {
         }
     }
 }
-

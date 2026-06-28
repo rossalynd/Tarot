@@ -10,7 +10,7 @@ import AVFoundation
 
 struct RuneSelectionView: View {
     @Binding var navigationPath: NavigationPath
-    @Binding var selectedRune: String?
+    @Bindable var session: ReadingSession
 
     @State private var chosenRune: RuneChoice? = nil
     @State private var isDrawingRune = false
@@ -94,6 +94,7 @@ struct RuneSelectionView: View {
             Spacer()
         }
         .padding()
+        .navigationBarBackButtonHidden(true)
     }
 
     private func drawRune() {
@@ -104,7 +105,7 @@ struct RuneSelectionView: View {
         let rune = RuneChoice.allCases.randomElement()!
 
         chosenRune = rune
-        selectedRune = rune.symbol
+        session.selectedRune = rune.symbol
 
         isDrawingRune = true
 

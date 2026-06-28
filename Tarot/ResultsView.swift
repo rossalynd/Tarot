@@ -10,9 +10,7 @@ import UIKit
 
 struct ResultsView: View {
     @Binding var navigationPath: NavigationPath
-    @Binding var selectedCards: [Card]
-    @Binding var selectedRune: String?
-    @Binding var hexagramLines: [Int]
+    @Bindable var session: ReadingSession
     
     @Environment(\.modelContext) private var modelContext
     
@@ -26,9 +24,9 @@ struct ResultsView: View {
     private let aiClient = TarotAIClient()
 
     private var rows: [GridItem] {
-        if selectedCards.count <= 4 {
+        if session.selectedCards.count <= 4 {
             return [GridItem(.flexible())]
-        } else if selectedCards.count <= 8 {
+        } else if session.selectedCards.count <= 8 {
             return [GridItem(.flexible()), GridItem(.flexible())]
         } else {
             return [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
@@ -42,12 +40,22 @@ struct ResultsView: View {
                     .font(.title)
                     .padding(.bottom, 4)
 
+               
+
                 GeometryReader { geometry in
                     LazyHGrid(rows: rows, spacing: 20) {
-                        ForEach(selectedCards) { card in
-                            CardView(card: card, isFaceUp: true)
-                                .aspectRatio(2 / 3, contentMode: .fit)
-                                .frame(width: cardWidth(for: geometry.size.width))
+                        ForEach(Array(session.selectedCards.enumerated()), id: \.element.id) { index, card in
+                            VStack(spacing: 8) {
+                                CardView(card: card, isFaceUp: true)
+                                    .aspectRatio(2 / 3, contentMode: .fit)
+                                    .frame(width: cardWidth(for: geometry.size.width))
+
+                                Text(positionLabel(for: index))
+                                    .font(.caption.bold())
+                                    .multilineTextAlignment(.center)
+                                    .foregroundStyle(.secondary)
+                                    .frame(width: cardWidth(for: geometry.size.width))
+                            }
                         }
                     }
                     .padding(2)
@@ -55,13 +63,11 @@ struct ResultsView: View {
                 }
                 .frame(height: gridHeight())
 
-                if !hexagramLines.isEmpty {
+                if !session.hexagramLines.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Pattern")
-                            .font(.title2.bold())
+                        
 
-                       
-                        IChingPatternSummaryView(lines: hexagramLines)
+                        IChingPatternSummaryView(lines: session.hexagramLines)
 
                         Text(lineDescription)
                             .font(.subheadline)
@@ -69,7 +75,7 @@ struct ResultsView: View {
                     }
                 }
 
-                if let selectedRune {
+                if let selectedRune = session.selectedRune {
                     RuneSummaryView(rune: selectedRune)
                 }
 
@@ -84,9 +90,7 @@ struct ResultsView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
                         Button("Back to Home") {
-                            selectedCards.removeAll()
-                            selectedRune = nil
-                            hexagramLines.removeAll()
+                            session.reset()
                             navigationPath = NavigationPath()
                         }
                         .padding()
@@ -95,24 +99,7 @@ struct ResultsView: View {
                         .cornerRadius(10)
 
                         Button("Save Reading") {
-                            let trimmedQuestion = userQuestion.trimmingCharacters(in: .whitespacesAndNewlines)
-
-                            let reading = Reading(
-                                cardNames: selectedCards.map(\.name),
-                                notes: notes,
-                                rune: selectedRune,
-                                hexagramLines: hexagramLines,
-                                aiQuestion: trimmedQuestion.isEmpty ? nil : trimmedQuestion,
-                                aiResponseJSON: Reading.encodeAIResponseForSave(aiResponse)
-                            )
-
-                            modelContext.insert(reading)
-
-                            do {
-                                try modelContext.save()
-                            } catch {
-                                print("Failed to save reading: \(error.localizedDescription)")
-                            }
+                            saveReading()
                         }
                         .padding()
                         .foregroundColor(.white)
@@ -122,8 +109,7 @@ struct ResultsView: View {
 
                     HStack {
                         Button("Copy Card Names") {
-                            let cardNames = selectedCards.map { $0.name }.joined(separator: "\n")
-                            UIPasteboard.general.string = cardNames
+                            UIPasteboard.general.string = cardNamesForClipboard()
                         }
                         .padding()
                         .foregroundColor(.white)
@@ -151,26 +137,13 @@ struct ResultsView: View {
                             .font(.headline)
 
                         ForEach(Array(aiResponse.cardByCard.enumerated()), id: \.offset) { idx, text in
-                            if idx < selectedCards.count {
-                                Text("• \(selectedCards[idx].name): \(text)")
+                            if idx < session.selectedCards.count {
+                                Text("• \(positionLabel(for: idx)) — \(session.selectedCards[idx].name): \(text)")
                             }
                         }
 
-                        Text("Advice")
-                            .font(.headline)
-
-                        ForEach(aiResponse.advice, id: \.self) { item in
-                            Text("• \(item)")
-                        }
-
-                        if !aiResponse.journalPrompts.isEmpty {
-                            Text("Journal Prompts")
-                                .font(.headline)
-
-                            ForEach(aiResponse.journalPrompts, id: \.self) { prompt in
-                                Text("• \(prompt)")
-                            }
-                        }
+                       
+                        
                     }
                     .padding(.top)
                 }
@@ -193,26 +166,7 @@ struct ResultsView: View {
                     }
 
                     Button(isAskingAI ? "Asking..." : "Interpret") {
-                        Task {
-                            isAskingAI = true
-                            aiError = nil
-
-                            do {
-                                let res = try await aiClient.interpret(
-                                    question: userQuestion,
-                                    selectedCards: selectedCards,
-                                    notes: notes,
-                                    rune: selectedRune,
-                                    hexagramLines: hexagramLines
-                                )
-                                aiResponse = res
-                                showAskSheet = false
-                            } catch {
-                                aiError = error.localizedDescription
-                            }
-
-                            isAskingAI = false
-                        }
+                        askAI()
                     }
                     .disabled(isAskingAI || userQuestion.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                     .padding()
@@ -235,31 +189,101 @@ struct ResultsView: View {
             }
         }
         .onAppear {
-            notes = addCardsToNotes(cards: selectedCards)
+            notes = addCardsToNotes()
         }
         .navigationBarBackButtonHidden(true)
     }
 
+    private func saveReading() {
+        let trimmedQuestion = userQuestion.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let reading = Reading(
+            cardNames: session.selectedCards.map(\.name),
+            notes: notes,
+            rune: session.selectedRune,
+            hexagramLines: session.hexagramLines,
+            aiQuestion: trimmedQuestion.isEmpty ? nil : trimmedQuestion,
+            aiResponseJSON: Reading.encodeAIResponseForSave(aiResponse)
+        )
+
+        modelContext.insert(reading)
+
+        do {
+            try modelContext.save()
+        } catch {
+            print("Failed to save reading: \(error.localizedDescription)")
+        }
+    }
+
+    private func askAI() {
+        Task {
+            isAskingAI = true
+            aiError = nil
+
+            do {
+                let res = try await aiClient.interpret(
+                    question: userQuestion,
+                    selectedCards: session.selectedCards,
+                    notes: notes,
+                    rune: session.selectedRune,
+                    hexagramLines: session.hexagramLines
+                )
+
+                aiResponse = res
+                showAskSheet = false
+            } catch {
+                aiError = error.localizedDescription
+            }
+
+            isAskingAI = false
+        }
+    }
+
     private func cardWidth(for totalWidth: CGFloat) -> CGFloat {
-        let columns = selectedCards.count <= 4 ? selectedCards.count : 4
+        let columns = session.selectedCards.count <= 4 ? session.selectedCards.count : 4
         let spacing: CGFloat = 20 * CGFloat(max(columns - 1, 0))
         return max((totalWidth - spacing) / CGFloat(max(columns, 1)), 70)
     }
 
     private func gridHeight() -> CGFloat {
-        let rowCount = selectedCards.count <= 4 ? 1 : selectedCards.count <= 8 ? 2 : 3
+        let rowCount = session.selectedCards.count <= 4 ? 1 : session.selectedCards.count <= 8 ? 2 : 3
         let cardHeight = UIScreen.main.bounds.width / 4 * (3 / 2)
-        return CGFloat(rowCount) * cardHeight + CGFloat((rowCount - 1) * 20)
+
+        return CGFloat(rowCount) * cardHeight + CGFloat((rowCount - 1) * 20) + 32
     }
 
-    private func addCardsToNotes(cards: [Card]) -> String {
-        cards.map(\.name).joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
+    private func addCardsToNotes() -> String {
+        session.selectedCards.enumerated()
+            .map { index, card in
+                "\(positionLabel(for: index)): \(card.name)"
+            }
+            .joined(separator: "\n")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func cardNamesForClipboard() -> String {
+        session.selectedCards.enumerated()
+            .map { index, card in
+                "\(positionLabel(for: index)): \(card.name)"
+            }
+            .joined(separator: "\n")
+    }
+
+    private func positionLabel(for index: Int) -> String {
+        guard index < session.spreadPositions.count else {
+            return "Card \(index + 1)"
+        }
+
+        let label = session.spreadPositions[index]
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        return label.isEmpty ? "Card \(index + 1)" : label
     }
 
     private var lineDescription: String {
-        guard !hexagramLines.isEmpty else { return "" }
+        guard !session.hexagramLines.isEmpty else { return "" }
 
-        let changingLines = hexagramLines.filter { $0 == 6 || $0 == 9 }.count
+        let changingLines = session.hexagramLines.filter { $0 == 6 || $0 == 9 }.count
 
         if changingLines == 0 {
             return "This pattern is stable."
@@ -269,7 +293,4 @@ struct ResultsView: View {
             return "\(changingLines) lines are changing."
         }
     }
-
-   
 }
-

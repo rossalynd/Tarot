@@ -12,70 +12,72 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State private var navigationPath = NavigationPath()
-    @State private var selectedCards: [Card] = []
-    @State private var selectedRune: String? = nil
-    @State private var hexagramLines: [Int] = []
+    @State private var readingSession = ReadingSession()
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            HomeView(navigationPath: $navigationPath)
-                .modelContainer(for: Reading.self)
-                .navigationDestination(for: String.self) { value in
-                    switch value {
-                    case "DeckView":
-                        DeckView(
-                            navigationPath: $navigationPath,
-                            selectedCards: $selectedCards,
-                            spreadCount: 4
-                        )
+            HomeView(
+                navigationPath: $navigationPath,
+                readingSession: readingSession
+            )
+            .modelContainer(for: Reading.self)
+            .navigationDestination(for: String.self) { value in
+                switch value {
+                case "DeckView":
+                    DeckView(
+                        navigationPath: $navigationPath,
+                        session: readingSession
+                    )
 
-                    case "SpreadSelectionView":
-                        SpreadSelectionView(
-                            navigationPath: $navigationPath,
-                            selectedCards: $selectedCards
-                        )
+                case "SpreadSelectionView":
+                    SpreadSelectionView(
+                        navigationPath: $navigationPath,
+                        session: readingSession
+                    )
 
-                    case "SavedReadings":
-                        SavedReadingsView(navigationPath: $navigationPath)
+                case "SavedReadings":
+                    SavedReadingsView(
+                        navigationPath: $navigationPath
+                    )
 
-                    case "SavedReading":
-                        SavedReadingsView(navigationPath: $navigationPath)
+                case "SavedReading":
+                    SavedReadingsView(
+                        navigationPath: $navigationPath
+                    )
 
-                    case "IChingSelectionView":
-                        IChingSelectionView(
-                            navigationPath: $navigationPath,
-                            hexagramLines: $hexagramLines
-                        )
+                case "IChingSelectionView":
+                    IChingSelectionView(
+                        navigationPath: $navigationPath,
+                        session: readingSession
+                    )
 
-                    case "RuneSelectionView":
-                        RuneSelectionView(
-                            navigationPath: $navigationPath,
-                            selectedRune: $selectedRune
-                        )
+                case "RuneSelectionView":
+                    RuneSelectionView(
+                        navigationPath: $navigationPath,
+                        session: readingSession
+                    )
 
-                    case "ResultsView":
-                        ResultsView(
-                            navigationPath: $navigationPath,
-                            selectedCards: $selectedCards,
-                            selectedRune: $selectedRune,
-                            hexagramLines: $hexagramLines
-                        )
+                case "ResultsView":
+                    ResultsView(
+                        navigationPath: $navigationPath,
+                        session: readingSession
+                    )
 
-                    case "FaceUpDeckView":
-                        FaceUpDeckView(navigationPath: $navigationPath)
+                case "FaceUpDeckView":
+                    FaceUpDeckView(
+                        navigationPath: $navigationPath
+                    )
 
-                    default:
-                        EmptyView()
-                    }
+                default:
+                    EmptyView()
                 }
-                .navigationDestination(for: CardMeaningRoute.self) { route in
-                    CardMeaning(cardName: route.cardName)
-                }
+            }
+            .navigationDestination(for: CardMeaningRoute.self) { route in
+                CardMeaning(cardName: route.cardName)
+            }
         }
         .onAppear {
-            selectedCards = []
-            selectedRune = nil
-            hexagramLines = []
+            readingSession.reset()
         }
     }
 }

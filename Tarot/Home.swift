@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var navigationPath: NavigationPath
+    @Bindable var readingSession: ReadingSession
 
     var body: some View {
         ZStack {
@@ -81,6 +82,7 @@ struct HomeView: View {
                             subtitle: "Begin a new spread and reveal your cards",
                             systemImage: "moon.stars.fill"
                         ) {
+                            readingSession.reset()
                             navigationPath.append("SpreadSelectionView")
                         }
 
@@ -110,6 +112,51 @@ struct HomeView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             
+        }
+        .navigationDestination(for: String.self) { route in
+            switch route {
+            
+
+            case "SavedReadings":
+                SavedReadingsView(
+                    navigationPath: $navigationPath
+                )
+
+            case "SpreadSelectionView":
+                SpreadSelectionView(
+                    navigationPath: $navigationPath,
+                    session: readingSession
+                )
+
+            case "DeckView":
+                DeckView(
+                    navigationPath: $navigationPath,
+                    session: readingSession
+                )
+
+            case "IChingSelectionView":
+                IChingSelectionView(
+                    navigationPath: $navigationPath,
+                    session: readingSession
+                )
+
+            case "RuneSelectionView":
+                RuneSelectionView(
+                    navigationPath: $navigationPath,
+                    session: readingSession
+                )
+
+            case "ResultsView":
+                ResultsView(
+                    navigationPath: $navigationPath,
+                    session: readingSession
+                )
+            case "FaceUpDeckView":
+                FaceUpDeckView(navigationPath: $navigationPath)
+
+            default:
+                EmptyView()
+            }
         }
     }
 }

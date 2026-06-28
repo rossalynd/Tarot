@@ -10,7 +10,7 @@ import AVFoundation
 
 struct IChingSelectionView: View {
     @Binding var navigationPath: NavigationPath
-    @Binding var hexagramLines: [Int]
+    @Bindable var session: ReadingSession
 
     @State private var coins: [SpinningCoin] = []
     @State private var isTossing = false
@@ -30,7 +30,7 @@ struct IChingSelectionView: View {
             Text("Choose")
                 .font(.largeTitle.bold())
 
-            Text("Line \(min(hexagramLines.count + 1, 6)) of 6")
+            Text("Line \(min(session.hexagramLines.count + 1, 6)) of 6")
                 .font(.headline)
                 .foregroundStyle(.secondary)
 
@@ -65,12 +65,12 @@ struct IChingSelectionView: View {
                 .transition(.opacity)
             }
 
-            if !hexagramLines.isEmpty {
+            if !session.hexagramLines.isEmpty {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Pattern so far")
                         .font(.headline)
 
-                    HexagramDisplayView(lines: hexagramLines)
+                    HexagramDisplayView(lines: session.hexagramLines)
                 }
                 .padding(.top, 8)
             }
@@ -83,7 +83,7 @@ struct IChingSelectionView: View {
 
             hasStarted = true
 
-            if hexagramLines.count >= 6 {
+            if session.hexagramLines.count >= 6 {
                 navigationPath.append("RuneSelectionView")
             } else {
                 startToss()
@@ -99,7 +99,7 @@ struct IChingSelectionView: View {
             return "Tap each spinning coin to stop it."
         } else if stoppedCount == 3 {
             return "Reading the line..."
-        } else if hexagramLines.count < 6 {
+        } else if session.hexagramLines.count < 6 {
             return "Preparing the next toss..."
         } else {
             return ""
@@ -107,7 +107,7 @@ struct IChingSelectionView: View {
     }
 
     private func startToss() {
-        guard hexagramLines.count < 6 else {
+        guard session.hexagramLines.count < 6 else {
             navigationPath.append("RuneSelectionView")
             return
         }
@@ -188,7 +188,7 @@ struct IChingSelectionView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
             withAnimation {
                 lineJustCompleted = total
-                hexagramLines.append(total)
+                session.hexagramLines.append(total)
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -197,7 +197,7 @@ struct IChingSelectionView: View {
                     coins = []
                 }
 
-                if hexagramLines.count >= 6 {
+                if session.hexagramLines.count >= 6 {
                     navigationPath.append("RuneSelectionView")
                 } else {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {

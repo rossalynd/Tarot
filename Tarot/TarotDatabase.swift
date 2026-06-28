@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 class TarotDatabase: ObservableObject {
     @Published var cards: [TarotCardMeaning] = []
 
@@ -15,9 +17,37 @@ class TarotDatabase: ObservableObject {
     }
 
     func load() {
-        if let url = Bundle.main.url(forResource: "tarot_meanings", withExtension: "json"),
-           let data = try? Data(contentsOf: url) {
-            cards = try! JSONDecoder().decode([TarotCardMeaning].self, from: data)
+        guard let url = Bundle.main.url(
+            forResource: "tarot_meanings_full_78",
+            withExtension: "json"
+        ) else {
+            print("Could not find tarot_meanings_full_78.json")
+            return
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            cards = try JSONDecoder().decode([TarotCardMeaning].self, from: data)
+            print("Loaded \(cards.count) tarot meanings")
+        } catch let DecodingError.keyNotFound(key, context) {
+            print("Missing key: \(key.stringValue)")
+            print("Coding path: \(context.codingPath.map { $0.stringValue }.joined(separator: " -> "))")
+            print("Debug description: \(context.debugDescription)")
+        } catch let DecodingError.typeMismatch(type, context) {
+            print("Type mismatch: \(type)")
+            print("Coding path: \(context.codingPath.map { $0.stringValue }.joined(separator: " -> "))")
+            print("Debug description: \(context.debugDescription)")
+        } catch let DecodingError.valueNotFound(type, context) {
+            print("Value not found: \(type)")
+            print("Coding path: \(context.codingPath.map { $0.stringValue }.joined(separator: " -> "))")
+            print("Debug description: \(context.debugDescription)")
+        } catch let DecodingError.dataCorrupted(context) {
+            print("Data corrupted")
+            print("Coding path: \(context.codingPath.map { $0.stringValue }.joined(separator: " -> "))")
+            print("Debug description: \(context.debugDescription)")
+        } catch {
+            print("Failed to load tarot meanings:")
+            print(error)
         }
     }
 }
