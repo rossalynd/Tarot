@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct IChingSelectionView: View {
     @Binding var navigationPath: NavigationPath
@@ -15,6 +16,14 @@ struct IChingSelectionView: View {
     @State private var isTossing = false
     @State private var lineJustCompleted: Int? = nil
     @State private var hasStarted = false
+
+    @State private var coinAudioPlayers: [AVAudioPlayer] = []
+
+    private let coinSoundNames = [
+        "coinToss1",
+        "coinToss2",
+        "coinToss3"
+    ]
 
     var body: some View {
         VStack(spacing: 28) {
@@ -120,6 +129,8 @@ struct IChingSelectionView: View {
         guard isTossing else { return }
         guard lineJustCompleted == nil else { return }
 
+        playRandomCoinSound()
+
         let result = currentCoinResult(for: coin)
 
         withAnimation(.spring(response: 0.35, dampingFraction: 0.75)) {
@@ -131,6 +142,29 @@ struct IChingSelectionView: View {
 
         if stoppedCount == 3 {
             completeLine()
+        }
+    }
+
+    private func playRandomCoinSound() {
+        guard let soundName = coinSoundNames.randomElement() else { return }
+
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
+            print("Could not find sound file named \(soundName).mp3")
+            return
+        }
+
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+            player.play()
+
+            coinAudioPlayers.append(player)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + player.duration + 0.2) {
+                coinAudioPlayers.removeAll { $0 === player }
+            }
+        } catch {
+            print("Failed to play coin sound: \(error.localizedDescription)")
         }
     }
 

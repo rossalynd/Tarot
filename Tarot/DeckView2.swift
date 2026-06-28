@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import AVFoundation
 
 struct DeckView: View {
     @Binding var navigationPath: NavigationPath
     @Binding var selectedCards: [Card]
+    @State private var cardRevealPlayer: AVAudioPlayer?
+    @State private var cardSelectPlayer: AVAudioPlayer?
 
     let spreadCount: Int
 
@@ -142,14 +145,22 @@ struct DeckView: View {
         let isVisible = overallIndex < visibleCardCount
         let isSelected = selectedCards.contains { $0.id == card.id }
         let isAnimating = animatingCards.contains(card.id)
+
         let shouldShowCard = isVisible && !isSelected && !isAnimating
         let canTapCard = shouldShowCard && selectedCards.count < spreadCount && flyingCard == nil
 
         return GeometryReader { geo in
             CardView(card: card, isFaceUp: false)
                 .opacity(shouldShowCard ? 1 : 0)
+                .scaleEffect(shouldShowCard ? 1 : 0.92)
+                .offset(y: shouldShowCard ? 0 : 8)
+                .blur(radius: shouldShowCard ? 0 : 2)
                 .allowsHitTesting(canTapCard)
                 .contentShape(Rectangle())
+                .animation(
+                    .smooth(duration: 0.25),
+                    value: visibleCardCount
+                )
                 .onTapGesture {
                     guard canTapCard else { return }
 
@@ -333,7 +344,8 @@ struct DeckView: View {
         guard selectedCards.count < spreadCount else { return }
         guard !selectedCards.contains(where: { $0.id == card.id }) else { return }
         guard flyingCard == nil else { return }
-
+        
+        playSound(named: "cardSelect")
         animatingCards.insert(card.id)
         activeParticles.append((id: card.id, position: position))
 
@@ -373,6 +385,8 @@ struct DeckView: View {
     }
 
     private func revealCardsStaggered() {
+        playSound(named: "cardReveal")
+        
         for i in 0..<deck.count {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.02) {
                 withAnimation(.smooth(duration: 0.2)) {
@@ -414,4 +428,26 @@ struct DeckView: View {
 
         return names.map { Card(name: $0) }
     }
+    
+    private func playSound(named name: String, extension fileExtension: String = "mp3") {
+        guard let url = Bundle.main.url(forResource: name, withExtension: fileExtension) else {
+            print("Sound file not found: \(name).\(fileExtension)")
+            return
+        }
+
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+            player.play()
+
+            if name == "cardReveal" {
+                cardRevealPlayer = player
+            } else if name == "cardSelect" {
+                cardSelectPlayer = player
+            }
+        } catch {
+            print("Failed to play sound: \(error.localizedDescription)")
+        }
+    }
 }
+

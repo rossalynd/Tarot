@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct RuneSelectionView: View {
     @Binding var navigationPath: NavigationPath
@@ -14,6 +15,8 @@ struct RuneSelectionView: View {
     @State private var chosenRune: RuneChoice? = nil
     @State private var isDrawingRune = false
     @State private var hasDrawnRune = false
+
+    @State private var audioPlayer: AVAudioPlayer?
 
     var body: some View {
         VStack(spacing: 24) {
@@ -94,6 +97,10 @@ struct RuneSelectionView: View {
     }
 
     private func drawRune() {
+        guard chosenRune == nil else { return }
+
+        playSound(named: "runeReveal")
+
         let rune = RuneChoice.allCases.randomElement()!
 
         chosenRune = rune
@@ -104,6 +111,25 @@ struct RuneSelectionView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
             isDrawingRune = false
             hasDrawnRune = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.80) {
+            playSound(named: "runeSelect")
+        }
+    }
+
+    private func playSound(named soundName: String) {
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
+            print("Could not find sound file named \(soundName).mp3")
+            return
+        }
+
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+        } catch {
+            print("Failed to play \(soundName): \(error.localizedDescription)")
         }
     }
 }
